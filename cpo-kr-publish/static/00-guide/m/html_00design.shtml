@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+
+		<!-- contents -->
+		<div id="contents" class="full">
+			<h3>디자인</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>반응형 해상도 기준 정의</h4>
+				
+				
+			</div>
+			<div id="uio_item1_2" class="component">
+				<h4>기본 폰트 설정</h4>
+				<!-- MC 언어별 기본 폰트 설정 -->
+				
+				<!-- MC 언어별 기본 폰트 설정 -->
+			</div>
+
+
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

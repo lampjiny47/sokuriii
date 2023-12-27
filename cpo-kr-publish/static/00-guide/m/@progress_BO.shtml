@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+</style>
+</head>
+<body class="list GHQ">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	
+	<!-- container -->
+	<div id="container3">
+			<iframe src="/BO/html/main.shtml" class="iframeBO" name="adminView" id="adminView"></iframe>
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script>
+function iframeBoH() {
+
+	var viewportWidth = $("body").innerWidth();
+	var viewportHeight = $("body").innerHeight();
+	$('#adminView').height(viewportHeight - 35);
+}
+$(document).ready(function() {
+	iframeBoH();
+	$('#adminView').scroll(function() {
+		iframeBoH();
+	});
+});
+</script>
+</body>
+</html>

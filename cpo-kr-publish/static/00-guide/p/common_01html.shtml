@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">공통</button>
+					<ul class="sub">
+						<li><button id="item1_1">데이터 없음</button></li>
+						<li><button id="item1_2">NO-image</button></li>
+						<li><button id="item1_3">Lazy Load</button></li>
+						<li><button id="item1_4">Paging</button></li>
+						<li><button id="item1_5">Layout</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--// left -->
+		<!-- contents -->
+		<div id="contents">
+				<h3>공통 코드</h3>
+				<div id="uio_item1_1" class="component">
+					<h4>데이터가 없습니다.</h4>
+					<pre class="brush: html;">
+						<p class="no_data">검색 결과가 없습니다.</p>
+					</pre>
+				</div>
+				<div id="uio_item1_2" class="component">
+					<h4>No-image</h4>
+				</div>
+				<div id="uio_item1_3" class="component">
+					<h4>No-image</h4>
+				</div>
+				<div id="uio_item1_4" class="component">
+					<h4>No-image</h4>
+				</div>
+				<div id="uio_item1_5" class="component">
+					<h4>기본 레이아웃</h4><a href="/HMC/m/SHTML/@layout/CPO_page.shtml" class="link_sample">샘플보기</a>
+					<pre class="brush: html">
+						<!--<head>-->
+							<meta charset="UTF-8">
+							<title>테스트 : 현대 CUV</title>
+							#include file="/HMC/m/SHTML/H_inc/common_meta.shtml"
+							<!--<link rel="stylesheet" type="text/css" href="../../css/h_display.css">--> <!-- 해당 CSS -->
+						<!--</head>-->
+						<!--<body>-->
+							#include file="/HMC/m/SHTML/H_inc/common_skip.shtml"
+							#include file="/HMC/m/SHTML/H_inc/layout_loading.shtml"
+							<!-- cpo wrap -->
+							<div id="CPOwrap">
+								<div id="CPOheader">
+									#include file="/HMC/m/SHTML/H_inc/layout_header.shtml"
+									<!--  s: title area : SUB  -->
+									<div class="h_sub"> <!-- 마이페이지 일 시 my_head, my_head2 class 추가 판매 준비 차량 목룍, 모델별 목록 일 시 visual class 추가 --> <!-- /HMC/m/SHTML/H_inc/layout_title.shtml, /GHQ/m/SHTML/H_inc/layout_title.shtml 서브헤더 리스트-->
+										<button type="button" class="ic_back">뒤로가기</button>
+										<h3 class="tit">타이틀</h3>
+										<ul class="util">
+											<li><a href="#" class="ic_cart">장바구니</a></li>
+										</ul>
+									</div>
+									<!--  e: title area : SUB  -->
+								</div>
+								<!-- ////////////////////     header   끝     ////////////////////-->
+								<!-- ////////////////////     contents 시작     ////////////////////-->
+								<div id="CPOcontents">
+									<!--TAB-->
+									<ul class="cpo_tab01">
+										<li><a href="#" class="tab_anchor on">구매내역</a></li>
+										<li><a href="#" class="tab_anchor">판매내역</a></li>
+									</ul>
+									<!-- data 없는 경우 -->
+									<div class="no_data">
+										<p class="tit">구매중인 상품이 없습니다.</p>
+										<p class="txt">내차사기는 믿고 맡길 수 있는<br />현대인증 중고차와 함께하세요.</p>
+										<div class="btn_area">
+											<a href="#" class="btn_mid02">홈으로 가기</a>
+										</div>
+									</div>
+									<!-- //data 없는 경우 -->
+									<!-- contents -->
+
+									<!-- //contents -->
+								</div>
+								<!-- ////////////////////     contents 끝     ////////////////////-->
+								#include file="/HMC/m/SHTML/H_inc/layout_actionbar.shtml"
+								#include file="/HMC/m/SHTML/H_inc/layout_footer.shtml"
+							</div>
+							<!-- //cpo wrap -->
+							#include file="/HMC/m/SHTML/H_inc/popup_include_all.shtml"
+						<!--</body>-->
+						<script>
+							CPO.top(1); //top 버튼 활성시 호출
+						</script>
+					</pre>
+					<h4>에러 레이아웃</h4><a href="/HMC/m/SHTML/@layout/CPO_page_error.shtml" class="link_sample">샘플보기</a>
+					<pre class="brush: html">
+						<!--<head>-->
+							<meta charset="UTF-8">
+							<title>에러페이지 : <script>MSG.text('현대 CUV', '제네시스 CUV');</script></title>
+							#include file="/HMC/m/SHTML/H_inc/common_meta.shtml"
+							<link rel="stylesheet" type="text/css" href="../../css/h_error.css">
+						<!--</head>-->
+						<!--<body>-->
+							<!--에러페이지-->
+							<div class="error_wrap">
+								<h1 class="logo"><script>MSG.text('현대 CUV', '제네시스 CUV');</script></h1>
+								<div class="e_cont">
+									<p class="tit">고객님 이용에 불편을 드려 죄송합니다.</p>
+									<p class="txt">서비스 이용량이 많아 현재 접속이 원활하지않습니다.<br>잠시 후 다시 시도해 주세요.</p>
+								</div>
+							</div>
+							<!--//에러페이지-->
+						<!--</body>-->
+					</pre>
+				</div>
+			</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/p/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

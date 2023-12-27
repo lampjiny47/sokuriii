@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+</style>
+</head> 
+<body class="list DEMO">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<div id="lnb">
+		<ul>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_layout.shtml">레이아웃<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0001.shtml">인트로<i>(완료 - 고도화 중)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0004.shtml">메인(#고객님)<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0005.shtml">메인(#상품목록A형)<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0006.shtml">메인(#상품목록B형)<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0015.shtml">검색조건설정<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_DP_M0016.shtml">검색결과<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_PP_M0001.shtml">상품상세<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_OR_M0001.shtml">나의차고(장바구니)<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_OR_M0004.shtml">주문서<i>(진행)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_OR_M0004_1.shtml">주문서 작성<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_OR_M0021.shtml">주문완료<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_ME_M0012.shtml">마이페이지<i>(완료)</i></a></li>
+			<li><a class="action" target="adminView" href="/DEMO/html/CPO_ME_M0039.shtml">배송조회<i>(완료)</i></a></li>
+		</ul>
+	</div>
+	<!-- container -->
+	<div id="container2" class="mc">
+		<div class="mcbox">
+			<iframe src="/DEMO/html/CPO_DP_layout.shtml" class="iframeMC" name="adminView" id="adminView"></iframe>
+		</div>
+
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script type="text/javascript">
+	$('li').each(function(){
+		if ($(this).children().hasClass('lang')){
+				$(this).addClass('haslang');
+		}
+	});
+</script> 
+<!-- //script -->
+</body>
+</html>

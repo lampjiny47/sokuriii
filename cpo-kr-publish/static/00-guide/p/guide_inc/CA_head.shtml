@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+<meta name="keywords" content="현대 제네시스">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CA 퍼블리싱</title>
+
+<!-- 가이드용 css/js -->
+<link rel="stylesheet" type="text/css" href="css/standard.css" />
+<link rel="stylesheet" type="text/css" href="css/_shCoreDefault.css" />
+<link rel="stylesheet" type="text/css" href="../../CA/p/css/c_common.css" />
+
+<script type="text/javascript" src="js/menuHTML.js"></script>
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/shBrushCss.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<!-- //가이드용 css/js -->
+
+<!-- <script src="js/jquery-1.12.4.min.js"></script> -->
+<script type="text/javascript" src="../../HMC/p/js/library/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../HMC/p/js/library/swiper-6.8.1.min.js"></script>
+<script type="text/javascript" src="../../HMC/p/js/library/jquery-ui-1.12.1.js"></script><!-- range & -->
+<script type="text/javascript" src="../../HMC/p/js/library/jquery.ui.touch-punch.min.js"></script><!-- mobile touch -->
+<!-- <script type="text/javascript" src="../../HMC/p/js/ui/h_uiux.js"></script> -->
+
+<style type="text/css">
+    body {background-color: #FFF;color: #333; margin:0 10px;padding:0;overflow-x: hidden;}
+    h1 {
+        font-size: 26px; font-weight: 500; padding: 20px
+    }
+    .CA_g_wrap {display: flex; justify-content: space-between; padding-left: 20px}
+    .CA_g_wrap > div {flex: 1 1;}
+    a {text-decoration: none; color:#333}
+</style>

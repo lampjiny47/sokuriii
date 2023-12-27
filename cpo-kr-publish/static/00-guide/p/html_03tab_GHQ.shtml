@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="guide_inc/guide_top_GHQ.shtml"-->
+</head>
+<style>
+	.component .txt02{margin:4px 0 0;color:#767676;font-size:16px;font-weight:400;line-height:24px;}
+</style>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<ul class="sorting">
+			<li><a href="html_03tab.shtml?depth=3&depthSub=4">HMC 보기</a></li>
+			<li><a href="html_03tab_GHQ.shtml?depth=3&depthSub=4">GHQ 보기</a></li>
+		</ul>
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">table 가이드</button>
+					<ul class="sub">
+						<li><button id="item1_1">GHQ tab 가이드</button></li>
+						<li><button id="item2_1">GHQ toggle 가이드</button></li>
+					</ul>
+				</li>
+			</ul> 
+		</div>
+		<!-- left -->
+
+		<!-- contents -->
+		<div id="contents">
+			<h3>GHQ tab 가이드</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>tab 가이드</h4>
+				<p>페이지 이동 링크 탭은 그냥 사용</p><br>
+				<p>페이지 안에서 탭으로 사용할 때 tab에 data-ref 적어주시고<br>
+					리스트에 role="tablist"<br>
+					button,a 태그에 role="tab" aria-selected="" aria-controls=""<br>
+					aria-selected true가 선택 false 선택 안 된 상태<br>
+					aria-controls는 탭 컨텐츠 id값이랑 맞춰야 됨
+				</p>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- 기본 tab 높이 48 (페이지 이동 링크로 사용)-->
+							<div class="tab">
+								<ul class="list">
+									<li class="on"><button type="button">텍스트</button></li>
+									<li><button type="button">텍스트</button></li>
+									<li><button type="button" disabled />텍스트</button></li>
+									<li><a href="javascript:;">a tag</a></li>
+									<li><a href="javascript:;" class="disabled">a tag disabled</a></li>
+									<li><button type="button" class="disabled">button class disabled</button></li>
+								</ul>
+							</div>
+							<!-- 기본 tab 높이 48 (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab" data-ref="tab">
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">a tag</a></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+								</ul>
+								<div class="cont" id="tabCont01">tab1</div>
+								<div class="cont" id="tabCont02">tab2</div>
+								<div class="cont" id="tabCont03">tab3</div>
+								<div class="cont" id="tabCont04">tab4</div>
+								<div class="cont" id="tabCont05">tab5</div>
+								<div class="cont" id="tabCont06">tab6</div>
+							</div>
+							<script>
+								const tab = new TabContents('tab');
+							</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>기본 tab <b style="color:#000">높이 48 (페이지 이동 링크로 사용)</b></h5>
+						<div class="tab">
+							<ul class="list">
+								<li class="on"><button type="button">텍스트</button></li>
+								<li><button type="button">텍스트</button></li>
+								<li><button type="button" disabled />텍스트</button></li>
+								<li><a href="javascript:;">a tag</a></li>
+								<li><a href="javascript:;" class="disabled">a tag disabled</a></li>
+								<li><button type="button" class="disabled">button class disabled</button></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>기본 tab <b style="color:#000">높이 48 (페이지 내 탭으로 사용)</b></h5>
+						<div class="tab" data-ref="tab">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">a tag</a></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+							<div class="cont" id="tabCont05">tab5</div>
+							<div class="cont" id="tabCont06">tab6</div>
+						</div>
+						<script>
+							const tab = new TabContents('tab');
+						</script>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- tab mid높이 40 (페이지 이동 링크로 사용) -->
+							<div class="tab mid">
+								<ul class="list">
+									<li class="on"><button type="button">텍스트</button></li>
+									<li><button type="button">텍스트</button></li>
+									<li><button type="button" disabled />텍스트</button></li>
+									<li><a href="javascript:;">텍스트</a></li>
+									<li><a href="javascript:;" class="disabled">a tag disabled</a></li>
+									<li><button type="button" class="disabled">button class disabled</button></li>
+								</ul>
+							</div>
+							<!-- tab mid 높이 40 (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab mid" data-ref="tabmid">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+							<div class="cont" id="tabCont05">tab5</div>
+							<div class="cont" id="tabCont06">tab6</div>
+						</div>
+						<script>
+							const tabmid = new TabContents('tabmid');
+						</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab mid<b style="color:#000">높이 40 (페이지 이동 링크로 사용)</b></h5>
+						<div class="tab mid">
+							<ul class="list">
+								<li class="on"><button type="button">텍스트</button></li>
+								<li><button type="button">텍스트</button></li>
+								<li><button type="button" disabled />텍스트</button></li>
+								<li><a href="javascript:;">텍스트</a></li>
+								<li><a href="javascript:;" class="disabled">a tag disabled</a></li>
+								<li><button type="button" class="disabled">button class disabled</button></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>tab mid<b style="color:#000">높이 40 (페이지 내 탭으로 사용)</b></h5>
+						<div class="tab mid" data-ref="tabmid">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+							<div class="cont" id="tabCont05">tab5</div>
+							<div class="cont" id="tabCont06">tab6</div>
+						</div>
+						<script>
+							const tabmid = new TabContents('tabmid');
+						</script>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- tab small 높이 32 (페이지 이동 링크로 사용) -->
+							<div class="tab small">
+								<ul class="list">
+									<li class="on"><button type="button">텍스트</button></li>
+									<li><button type="button">텍스트</button></li>
+									<li><button type="button" disabled />텍스트</button></li>
+									<li><a href="javascript:;">텍스트</a></li>
+									<li><a href="javascript:;" class="disabled">a tag disalbed</a></li>
+									<li><button type="button" class="disabled">button class disalbed</button></li>
+								</ul>
+							</div>
+							<!-- tab small 높이 32 (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab small" data-ref="tabsmall">
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+								</ul>
+								<div class="cont" id="tabCont01">tab1</div>
+								<div class="cont" id="tabCont02">tab2</div>
+								<div class="cont" id="tabCont03">tab3</div>
+								<div class="cont" id="tabCont04">tab4</div>
+								<div class="cont" id="tabCont05">tab5</div>
+								<div class="cont" id="tabCont06">tab6</div>
+							</div>
+							<script>
+								const tabsmall = new TabContents('tabsmall');
+							</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab small<b style="color:#000">높이 32 (페이지 이동 링크로 사용)</b></h5>
+						<div class="tab small">
+							<ul class="list">
+								<li class="on"><button type="button">텍스트</button></li>
+								<li><button type="button">텍스트</button></li>
+								<li><button type="button" disabled />텍스트</button></li>
+								<li><a href="javascript:;">텍스트</a></li>
+								<li><a href="javascript:;" class="disabled">a tag disalbed</a></li>
+								<li><button type="button" class="disabled">button class disalbed</button></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>tab small<b style="color:#000">높이 32 (페이지 내 탭으로 사용)</b></h5>
+						<div class="tab small" data-ref="tabsmall">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03" disabled />텍스트</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont05" class="disabled">a tag disabled</a></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont06" class="disabled">button class disabled</button></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+							<div class="cont" id="tabCont05">tab5</div>
+							<div class="cont" id="tabCont06">tab6</div>
+						</div>
+						<script>
+							const tabsmall = new TabContents('tabsmall');
+						</script>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<div class="tab date" data-ref="tabdate">
+								<span class="txt">2021.06.15~2021.09.13</span>
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button">6개월</button></li>
+									<li><button type="button">1개월</button></li>
+									<li><button type="button" disabled />7일</button></li>
+								</ul>
+							</div>
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab 날짜</h5>
+						<div class="tab date" data-ref="tabdate">
+							<span class="txt">2021.06.15~2021.09.13</span>
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button">6개월</button></li>
+								<li><button type="button">1개월</button></li>
+								<li><button type="button" disabled />7일</button></li>
+							</ul>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- tab 텍스트 (페이지 이동 링크로 사용) -->
+							<div class="tab_txt">
+								<ul class="list">
+									<li class="on"><button type="button">텍스트</button></li>
+									<li><button type="button">텍스트</button></li>
+									<li><button type="button" disabled />텍스트</button></li>
+								</ul>
+							</div>
+							<!-- tab 텍스트 (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab_txt" data-ref="tabtxt">
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">텍스트</button></li>
+								</ul>
+								<div class="cont" id="tabCont01">tab1</div>
+								<div class="cont" id="tabCont02">tab2</div>
+								<div class="cont" id="tabCont03">tab3</div>
+							</div>
+							<script>
+								const tabtxt = new TabContents('tabtxt');
+							</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab 텍스트<b style="color:#000;">(페이지 이동 링크로 사용)</b></h5>
+						<div class="tab_txt">
+							<ul class="list">
+								<li class="on"><button type="button">텍스트</button></li>
+								<li><button type="button">텍스트</button></li>
+								<li><button type="button" disabled />텍스트</button></li>
+								<li><a href="javascript:;">텍스트</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>tab 텍스트<b style="color:#000;">(페이지 내 탭으로 사용)</b></h5>
+						<div class="tab_txt" data-ref="tabtxt">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">텍스트</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+						</div>
+						<script>
+							const tabtxt = new TabContents('tabtxt');
+						</script>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- tab 텍스트 type02 (페이지 이동 링크로 사용) -->
+							<div class="tab_txt type02">
+								<ul class="list">
+									<li class="on"><button type="button">텍스트</button></li>
+									<li><button type="button">텍스트</button></li>
+									<li><button type="button" disabled />텍스트</button></li>
+									<li><a href="javscript:;">텍스트</a></li>
+								</ul>
+							</div>
+							<!-- tab 텍스트 type02 (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab_txt type02" data-ref="tabtxt02">
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">텍스트</button></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+								</ul>
+								<div class="cont" id="tabCont01">tab1</div>
+								<div class="cont" id="tabCont02">tab2</div>
+								<div class="cont" id="tabCont03">tab3</div>
+								<div class="cont" id="tabCont04">tab4</div>
+							</div>
+							<script>
+								const tabtxt02 = new TabContents('tabtxt02');
+							</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab 텍스트 type02<b style="color:#000;">(페이지 이동 링크로 사용)</b></h5>
+						<div class="tab_txt type02">
+							<ul class="list">
+								<li class="on"><button type="button">텍스트</button></li>
+								<li><button type="button">텍스트</button></li>
+								<li><button type="button" disabled />텍스트</button></li>
+								<li><a href="javscript:;">텍스트</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>tab 텍스트 type02<b style="color:#000;">(페이지 내 탭으로 사용)</b></h5>
+						<div class="tab_txt type02" data-ref="tabtxt02">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">텍스트</button>
+								</li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">텍스트</button>
+								</li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">텍스트</button>
+								</li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont04">텍스트</a></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+						</div>
+						<script>
+							const tabtxt02 = new TabContents('tabtxt02');
+						</script>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<!-- tab sorting (페이지 이동 링크로 사용) -->
+							<div class="tab_sort">
+								<ul class="list">
+									<li class="on"><button type="button">전체내역</button></li>
+									<li><button type="button">결제완료</button></li>
+									<li><button type="button">취소/환불</button></li>
+									<li><button type="button">취소/환불</button></li>
+									<li><button type="button">취소/환불</button></li>
+									<li><button type="button">취소/환불</button></li>
+									<li><a href="javascript:;">취소/환불</a></li>
+								</ul>
+							</div>
+							<!-- tab sorting (페이지 내 탭으로 사용) -->
+							<!-- <div class="tab_sort" data-ref="tabsort">
+								<ul class="list" role="tablist">
+									<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">전체내역</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">결제완료</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">취소/환불</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont04">취소/환불</button></li>
+									<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont05">취소/환불</button></li>
+									<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont06">취소/환불</a></li>
+								</ul>
+								<div class="cont" id="tabCont01">tab1</div>
+								<div class="cont" id="tabCont02">tab2</div>
+								<div class="cont" id="tabCont03">tab3</div>
+								<div class="cont" id="tabCont04">tab4</div>
+								<div class="cont" id="tabCont05">tab5</div>
+								<div class="cont" id="tabCont06">tab6</div>
+							</div>
+							<script>
+								const tabsort = new TabContents('tabsort');
+							</script> -->
+						</pre>
+					</li>				
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>tab sorting<b style="color:#000;">(페이지 이동 링크로 사용)</b></h5>
+						<div class="tab_sort">
+							<ul class="list">
+								<li class="on"><button type="button">전체내역</button></li>
+								<li><button type="button">결제완료</button></li>
+								<li><button type="button">취소/환불</button></li>
+								<li><button type="button">취소/환불</button></li>
+								<li><button type="button">취소/환불</button></li>
+								<li><button type="button">취소/환불</button></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h5>tab sorting<b style="color:#000;">(페이지 내 탭으로 사용)</b></h5>
+						<div class="tab_sort" data-ref="tabsort">
+							<ul class="list" role="tablist">
+								<li class="on"><button type="button" role="tab" aria-selected="true" aria-controls="tabCont01">전체내역</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont02">결제완료</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont03">취소/환불</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont04">취소/환불</button></li>
+								<li><button type="button" role="tab" aria-selected="false" aria-controls="tabCont05">취소/환불</button></li>
+								<li><a href="javascript:;" role="tab" aria-selected="false" aria-controls="tabCont06">취소/환불</a></li>
+							</ul>
+							<div class="cont" id="tabCont01">tab1</div>
+							<div class="cont" id="tabCont02">tab2</div>
+							<div class="cont" id="tabCont03">tab3</div>
+							<div class="cont" id="tabCont04">tab4</div>
+							<div class="cont" id="tabCont05">tab5</div>
+							<div class="cont" id="tabCont06">tab6</div>
+						</div>
+						<script>
+							const tabsort = new TabContents('tabsort');
+						</script>
+					</li>
+				</ol>
+			</div>			
+			<div id="uio_item2_1" class="component">
+				<h4>toggle 가이드</h4>
+				<ol class="pre">
+					<li>
+						<h5>페이지에 나오는 기타 토글들</h5>
+						<pre class="brush: html;">
+							<div class="toggle_btn01">
+								<label>
+									<input type="checkbox">
+								</label>
+							</div>
+							<div class="toggle_btn02">
+								<label>
+									<input type="checkbox">
+								</label>
+							</div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="toggle_btn01">
+							<label>
+								<input type="checkbox">
+							</label>
+						</div>
+						<div class="toggle_btn02">
+							<label>
+								<input type="checkbox">
+							</label>
+						</div>
+					</li>
+					<li>
+						<p>bg dark 일 때, toggle_btn01 사용</p>
+						<div class="toggle_btn01">
+							<label>
+								<input type="checkbox">
+							</label>
+						</div>
+					</li>
+				</ol>				
+			</div>
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/p/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

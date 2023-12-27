@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+</style>
+</head> 
+<body class="list NonCPO">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<div id="lnb">
+		<ul>
+			<li><a class="action" target="adminView" href="/ISPT/SHTML/00_common/00_PO_layout.shtml">레이아웃 <em>00_common</em><i>(완료)</i></a></li>
+			
+			<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/00_PO_popup.shtml">Layer Popup 모음<i>(완료)</i></a></li>
+
+			
+			<li><a class="action" href="#">공통 <em>00_common</em><i>(완료)</i></a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_02_0100.shtml">업무요청관리<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_03_0100.shtml">이용약관<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_03_0200.shtml">개인정보 처리방침<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_04_0100.shtml">에러페이지(404)<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_04_0200.shtml">에러페이지(시스템)<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_04_0300.shtml">에러페이지(점검)<i>(완료)</i></a></li>
+				</ul>
+			</li>
+			<li><a class="action" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01.shtml">로그인 <em>01_member</em><i>(완료)</i></a></li>
+			<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_0100.shtml">이용약관 및 개인정보처리방침 <em>01_member</em><i>(완료)</i></a></li>
+
+			<li><a class="action" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05.shtml">나의 실적 <em>02_mypage</em><i>(완료)</i></a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05.shtml">메인<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_0300.shtml">평가하기<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_0100.shtml">오늘평가<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_0200.shtml">지난평가<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_0400.shtml">내 실적 현황<i>(완료)</i></a></li>
+				</ul>
+			</li>
+			<li><a class="action" href="#">업무 <em>03_work</em><i>(완료)</i></a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_0100.shtml">실사검수 상세<i>(완료)</i></a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_0103.shtml">사진등록<i>(완료)</i></a></li>
+				</ul>
+			</li>
+			<li><a class="action Link" target="adminView" href="/ISPT/SHTML/04_cscenter/AC_MO_05_0500.shtml">공지사항 <em>04_cscenter</em><i>(완료)</i></a></li>
+			<li><a class="action Link" target="adminView" href="/ISPT/SHTML/04_cscenter/AC_MO_05_0600.shtml">자주 묻는 질문 <em>04_cscenter</em><i>(완료)</i></a></li>
+		</ul>
+	</div>
+	<!-- container -->
+	<div id="container2" class="mc">
+		<div class="mcbox">
+			<iframe src="/ISPT/SHTML/00_common/00_PO_layout.shtml" class="iframeMC" name="adminView" id="adminView"></iframe>
+		</div>
+
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script type="text/javascript">
+	$('li').each(function(){
+		if ($(this).children().hasClass('lang')){
+				$(this).addClass('haslang');
+		}
+	});
+</script> 
+<!-- //script -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/guide_top.shtml" -->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+.red{color:#ff0000}
+a em{font-size:10px;opacity:0.8}
+.same, .SameLink {color:yellow !important}
+</style>
+</head> 
+<body class="list HMC">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml" -->
+	<button class="top_view">TOP</button>
+	<!-- container -->
+	<div id="container2" class="pc">
+		<!--#include file="/00-guide/p/filelist.html" -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script type="text/javascript">
+	$('.top_view').on('click', function() {
+		$(window).scrollTop('0');
+	});
+
+	const htmlList = document.querySelector('#listBody');
+	const links = htmlList.querySelectorAll('a');
+	links.forEach((_this)=>{
+		const ghqLink = document.createElement('a');
+		if(_this.getAttribute('ghref')) {
+			ghqLink.href = _this.getAttribute('ghref');
+		} else {
+			if(_this.href.indexOf('?') > 0) {
+				ghqLink.href = _this.href + '&site=GHQ';
+			} else {
+				ghqLink.href = _this.href + '?site=GHQ';
+			}
+		}
+		ghqLink.innerText = 'GHQ';
+		ghqLink.setAttribute('target', '_blank')
+		_this.insertAdjacentElement('afterend', ghqLink);
+	});
+</script>
+<!-- //script -->
+</body>
+</html>

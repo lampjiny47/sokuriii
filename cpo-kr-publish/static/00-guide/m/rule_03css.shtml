@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">CSS</button>
+					<ul class="sub">
+						<li><button id="item1_1">기본 규칙</button></li>
+						<li><button id="item1_2">웹 폰트</button></li>
+						<li><button id="item1_3">인코딩</button></li>
+						<li><button id="item1_4">selector</button></li>
+						<li><button id="item1_5">CSS 선언 타입</button></li>
+						<li><button id="item1_6">CSS 속성</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+		<!-- contents -->
+		<div id="contents">
+
+			<h3>CSS</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>기본 규칙</h4>
+
+				<h6>W3C Validation</h6>
+				<p class="summary">
+					모바일에서 CSS는 사용 가능한 hack과 CSS3 속성을 제외하고 W3C Validation을 통과해야 한다.
+				</p>
+				<h6>영문 소문자 사용</h6>
+				<p class="summary">
+					모든 속성은 영문 소문자로만 작성한다.
+				</p>
+				<h6>따옴표 사용 범위</h6>
+				<p class="summary">
+					공백이 포함된 폰트명, 한글 폰트명, 문자열 데이터타입, URL 테이터 타입, filter 속성의 파라미터값은 작은따옴표(‘ ’)로 감싸며 @charset 선언 시에는 속성 값을 큰따옴표 (“ ”)로 감싼다.
+				</p>
+			</div>
+			<div id="uio_item1_2" class="component">
+				<h4>들여쓰기</h4>
+				<p class="summary">
+					CSS 코드를 작성할 때, 의미 있는 객체의 그룹핑에서는 속성 간의 줄바꿈을 허용한 경우, 줄 바꿈된 속성들은 들여쓰기를 허용한다.
+				</p>
+			</div>
+			<div id="uio_item1_3" class="component">
+				<h4>공백</h4>
+				<p class="summary">
+					<span class="col01">가독성을 위해서 선택자 간 공백, 속성 간 공백, 중괄호 좌우 공백을 허용</span>한다.
+				</p>
+			</div>
+			<div id="uio_item1_4" class="component">
+				<h4>빈 줄</h4>
+				<p class="summary">
+					의미 있는 객체를 구분하기 위하여 코드 그룹 간 2줄씩 빈 줄을 넣을 수 있다.
+				</p>
+			</div>
+			<div id="uio_item1_5" class="component">
+				<h4>줄 바꿈</h4>
+				<ol class="dot01">
+					<li>선택자, 속성 값 사이의 줄 바꿈은 허용하지 않는다.</li>
+					<li>단, 의미 있는 그룹에서의 속성 간의 줄 바꿈은 허용한다.</li>
+				</ol>
+<pre class="brush: html;">
+div.group_lst { 
+	position:relative; 
+	z-index:200;
+	margin:0 0 20px 0;
+}
+div.group_lst p.btn {font-family:Tahoma, ‘돋움’; position:absolute; top:0px; left:0px;}		
+</pre>
+			</div>
+			<div id="uio_item1_6" class="component">
+				<h4>인코딩</h4>
+				<p class="summary">
+					폰트 이름이 영문이 아닐 때 이를 브라우저에서 바르게 표현하고, HTML에서 불러온 스타일을 제대로 렌더링 하려면 반드시 CSS 인코딩을 선언해야 한다.<br />
+					HTML과 동일한 문서 첫 줄에 공백 없이 선언한다.<br />
+					파일을 저장할 때는 반드시 선언한 인코딩과 동일한 인코딩을 선택한다.
+				</p>
+<pre class="brush: html;">
+@charset "UTF-8";	
+</pre>
+			</div>
+			<div id="uio_item1_7" class="component">
+				<h4>선택자</h4>
+				<h6>공통 선택자 사용 지양</h6>
+				<p class="summary">
+					공통 선택자 ‘*’는 웹 페이지의 성능을 떨어뜨리고, Internet Explorer 에서는 주석까지 영향을 받을 수 있으므로 사용하지 않는다.
+				</p>
+				<h6>id 선택자 범위</h6>
+				<p class="summary">
+					id 선택자는 1.2 id 및 class 네이밍 규칙에서 정의한 레이아웃에서만 사용한다.
+				</p>
+				<h6>다중 클래스(교차속성) 사용</h6>
+				<ol class="dot01">
+					<li>Internet Explorer 6.0 브라우저 환경에서 교차속성 오류가 발생하므로 id와 class, class와 class 간의 교차 속성을 사용하지 않는다.</li>
+					<li>
+						다중 클래스(교차속성)이란?<br />
+						두 선택자의 조합에 의해 속성이 부여되는 경우를 의미한다.<br />
+						아래 예에서 background:yellow 속성은 .class와 .bg가 동시에 선언될 때만 의미가 있으며, background:green 속성은 .class와 .bgv1이 동시에 선언될 때만 의미가 있다.
+						<div class="tbl03">
+							<table summary="다중 클래스(교차속성) 사용">
+							<colgroup>
+								<col style="50%">
+								<col style="">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">잘못 된 예</th>
+									<th scope="col">올바른 예</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>.class bg {bacnground:yellow}</td>
+									<td>.bg {background:yellow}</td>
+								</tr>
+								<tr>
+									<td>.class bgv1 {bacnground:green}</td>
+									<td>.bgv1 {background:green}</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+					</li>
+					<li>Internet Explorer 6.0 에서는 id와 class 각 교차속성을 사용할 경우 두 번째 선언된 교차속성은 무시하는 버그가 있으며, class와 class 간의 교차속성을 잘못 해석하는 버그가 있다. 이와 같은 버그를 방지하기 위해 교차속성을 사용하지 않도록 한다.</li>
+					<li>교차속성을 사용하지 않으면 코드 양을 줄이고 각 class 간 독립성을 유지할 수 있다.</li>
+				</ol>
+			</div>
+			<div id="uio_item1_8" class="component">
+				<h4>속성</h4>
+				<h6>속성 선언 순서</h6>
+				<p class="summary">
+					속성을 선언할 때는 그 쓰임새가 레이아웃과 관련이 큰 것에서 시작하여 레이아웃과 무관한 것 순서로 선언한다. 관련 속성은 대표되는 속성 다음으로 선언한다.
+				</p>
+				<div class="tbl03">
+					<table summary="속성 선언 순서">
+					<colgroup>
+						<col style="20%">
+						<col style="20%">
+						<col style="35%">
+						<col style="">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">순서</th>
+							<th scope="col">의미</th>
+							<th scope="col">대표되는 속성</th>
+							<th scope="col">관련 속성</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>표시</td>
+							<td>display</td>
+							<td>Visibility</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>넘침</td>
+							<td>overflow</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>흐름</td>
+							<td>float</td>
+							<td>clear</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>위치</td>
+							<td>position</td>
+							<td>top, right, bottom, left, z-index</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>크기</td>
+							<td>width, height</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>간격</td>
+							<td>margin, padding</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>테두리</td>
+							<td>border</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>배경</td>
+							<td>Background</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>폰트</td>
+							<td>font</td>
+							<td>color, letter-spacing, text-align, text-decoration, text-indent, vertical-align, white-space 등</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>기타</td>
+							<td></td>
+							<td>위에 언급되지 않은 나머지 속성들로 폰트의 관련 속성 이후에 선언하며, 기타 속성 내의 순서는 무관하다.</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+
+				<h6>한글 폰트 선언</h6>
+				<p class="summary">
+					영문폰트만 선언할 경우 특정 브라우저에서 폰트를 올바르게 출력하지 못하는 경우가 있으므로 한글 폰트 선언 시 한글, 영문 폰트를 모두 선언한다.
+				</p>
+<pre class="brush: html;">
+font-family:'돋움', dotum
+</pre>
+			</div>
+			<div id="uio_item1_9" class="component">
+				<h4>z-index</h4>
+				<ol class="dot01">
+					<li>z-index 속성의 속성 값의 범위는 최소 10, 최고 1000이며, 10단위로 증감한다. 단, 10단위 사이의 예외 변수가 발생하면 1단위 값을 지정할 수 있다.</li>
+					<li>각 영역별(header, container, footer) z-index 범위를 설정하여 해당 영역에서는 z-index 의 범위를 벗어나지 않도록 한다.</li>
+				</ol>
+			</div>
+			<div id="uio_item1_10" class="component">
+				<h4>CSS 핵(hack)</h4>
+				<p class="summary">
+					핵은 사용을 지양한다.
+				</p>
+			</div>
+			<div id="uio_item1_11" class="component">
+				<h4>CSS 선언 타입</h4>
+				<p class="summary">
+					CSS 선언 타입은 크게 세 가지로 분류하며, 용도에 맞게 사용한다.
+				</p>
+
+				<h6>External type</h6>
+				<p class="summary">
+					CSS를 선언하는 가장 기본적인 방식으로, CSS 파일이 별도로 존재하는 형태이다. Link Element를 통해 HTML과 CSS 파일을 연결한다. 
+				</p>
+<pre class="brush:html;">
+<link rel="stylesheet" type="text/css" href="" />
+</pre>
+				<h6>Internal(Embedded) type</h6>
+				<p class="summary">
+					HTML 파일의 head 안에 스타일을 선언하는 방식으로, 단발성 페이지의 CSS 분량이 작을 경우 사용한다.
+				</p>
+<pre class="brush: html;">
+<head>
+	<style type="text/css">
+	
+	</style>
+</head>
+</pre>
+				<h6>Inline type</h6>
+				<p class="summary">
+					HTML의 개별 Element에 style 속성을 이용하여 스타일을 선언하는 방식으로, 속성 값이 동적으로 변경되어야 하는 경우 사용한다. 
+				</p>
+<pre class="brush: html;">
+<div style="top:0px; left:10px;">
+
+</div>
+</pre>
+			</div>
+			<div id="uio_item1_12" class="component">
+				<h4>CSS 파일 분기</h4>
+				<p class="summary">
+					파일은 독립된 한 서비스 내에 반드시 하나의 파일을 생성하며, 분기를 허용하는 경우는 다음과 같다.
+				</p>
+				<ol class="dot01">
+					<li>한 서비스가 사용자 화면/어드민으로 구성되어 전체 레이아웃이 다를 경우</li>
+					<li>개편 시 개발상의 이슈로 이전에 분리되어 있던 CSS를 합칠 수 없는 경우</li>
+					<li>한 서비스 내에 단발성 페이지로 존재하나 CSS를 임베드하기 어려운 경우</li>
+				</ol>
+			</div>
+			<div id="uio_item1_13" class="component">
+				<h4>CSS 초기 파일</h4>
+				<p class="summary">
+					CSS를 새로 작성할 때는 아래 파일을 기본으로 한다. 초기 파일에는 스타일 속성 초기화 문장이 포함되어 있으며, 초기화 문장은 변경할 수 없다.
+				</p>
+			</div>
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

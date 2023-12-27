@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml" -->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+.red{color:#ff0000}
+a em{font-size:10px;opacity:0.8}
+.same, .SameLink {color:yellow !important}
+</style>
+</head> 
+<body class="list HMC">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml" -->
+	<button class="top_view">TOP</button>
+	<div id="lnb">
+		<a class="all_view">모두열림/닫힘</i></a>
+		<!--#include file="/00-guide/m/filelist.html" -->
+	</div>
+	<!-- container -->
+	<div id="container2" class="mc">
+		<div class="mcbox HMC">
+			<button type="button" class="css_open">CSS 보기</button><button type="button" class="new_tab">새 탭에서 링크보기</button>
+			<iframe src="/HMC/m/SHTML/@layout/CPO_page.shtml" class="iframeMC" name="adminView" id="adminView"></iframe>
+		</div>
+		<!-- CSS모듈 분기처리 -->
+		<div class="mcs_css_module HMC">
+			<h3 style="padding:10px 20px;"><i>HMC</i>URL(모듈)별 분기처리된 CSS 파일</h3>
+			<div class="scroll">
+				<div id="cssModule" class="component" style="margin-bottom:0;padding-top:0;">
+					<div class="tbl03">
+						<table summary="css리스트" style="border:0;">
+						<colgroup>
+							<col style="width:200px;" />
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">1Depth</th>
+								<th scope="col">CSS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>공통</strong></td>
+								<td><strong>/css/h_common.css</strong></td>
+							</tr>
+							<tr>
+								<td>로그인</td>
+								<td>/css/h_login.css</td>
+							</tr>
+							<tr>
+								<td>검색결과&상품목록</td>
+								<td>/css/h_display.css</td>
+							</tr>
+							<tr>
+								<td>PDP(상품상세)</td>
+								<td>/css/h_detail.css</td>
+							</tr>
+							<tr>
+								<td>장바구니 & 주문하기</td>
+								<td>/css/h_order.css</td>
+							</tr>
+							<tr>
+								<td>마이페이지</td>
+								<td>/css/h_mypage.css</td>
+							</tr>
+							<tr>
+								<td>고객센터</td>
+								<td>/css/h_cscenter.css</td>
+							</tr>
+							<tr>
+								<td>에러페이지</td>
+								<td>/css/h_error.css</td>
+							</tr>
+							<tr>
+								<td>풋터 공통</td>
+								<td>/css/h_info.css</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<br />
+					<ol class="dot01">
+						<li>콘텐츠 페이지 & 안내화면은 이후 적용 예정</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<!-- //CSS모듈 분기처리 -->
+		<div class="mcbox GHQ">
+			<button type="button" class="css_open">CSS 보기</button><button type="button" class="new_tab2">새 탭에서 링크보기</button>
+			<iframe src="/HMC/m/SHTML/@layout/CPO_page.shtml" class="iframeMC" name="adminView02" id="adminView02"></iframe>
+		</div>
+		<!-- CSS모듈 분기처리 -->
+		<div class="mcs_css_module GHQ">
+			<h3 style="padding:10px 20px;"><i>GHQ</i>URL(모듈)별 분기처리된 CSS 파일</h3>
+			<div class="scroll">
+				<div id="cssModule" class="component" style="margin-bottom:0;padding-top:0;">
+					<div class="tbl03">
+						<table summary="css리스트" style="border:0;">
+						<colgroup>
+							<col style="width:200px;" />
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">1Depth</th>
+								<th scope="col">CSS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>공통</strong></td>
+								<td><strong>/css/h_common.css</strong></td>
+							</tr>
+							<tr>
+								<td>로그인</td>
+								<td>/css/g_login.css</td>
+							</tr>
+							<tr>
+								<td>검색결과&상품목록</td>
+								<td>/css/g_display.css</td>
+							</tr>
+							<tr>
+								<td>PDP(상품상세)</td>
+								<td>/css/g_detail.css</td>
+							</tr>
+							<tr>
+								<td>장바구니 & 주문하기</td>
+								<td>/css/g_order.css -- white </td>
+							</tr>
+							<tr>
+								<td>마이페이지</td>
+								<td>/css/g_mypage.css -- white </td>
+							</tr>
+							<tr>
+								<td>고객센터</td>
+								<td>/css/g_cscenter.css -- white </td>
+							</tr>
+							<tr>
+								<td>에러페이지</td>
+								<td>/css/g_error.css</td>
+							</tr>
+							<tr>
+								<td>풋터 공통</td>
+								<td>/css/g_info.css</td>
+							</tr>
+							<tr class="dark">
+								<td>Dark BG Based Page</td>
+								<td>
+									공통 : intro
+									<br /><spant style="color:#fff">공통 : </spant>풋터
+									<br /><spant style="color:#fff">공통 : </spant>에러페이지
+									
+									
+									<br />전시 : 메인진입
+									<br /><spant style="color:#fff">전시 : </spant>메인
+									<br /><spant style="color:#fff">전시 : </spant>전시템플릿
+									<br /><spant style="color:#fff">전시 : </spant>검색/PLP
+									<br />기타 : 웹 안내페이지
+
+								</td>
+							</tr>
+							<tr>
+								<td>Light BG Based Page</td>
+								<td>
+									주문/결제
+									<br />회원
+									<br />마이페이지
+									<br />	고객센터
+
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<br />
+					<ol class="dot01">
+						<li>콘텐츠 페이지 & 안내화면은 이후 적용 예정</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<!-- //CSS모듈 분기처리 -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script type="text/javascript">
+	$('li').each(function(){
+		if ($(this).children().hasClass('lang')){
+				$(this).addClass('haslang');
+		}
+	});
+	$('.mcbox .css_open').click(function(){
+		$(this).parent().next().toggleClass('open');
+	});
+
+	$('.new_tab').click(function(){
+		var iframeUrl = $('#adminView').attr('src');
+		window.open(iframeUrl);
+	});
+	$('.new_tab2').click(function(){
+		var iframeUrl = $('#adminView02').attr('src');
+		window.open(iframeUrl);
+	});
+	
+	$('.Link').click(function(){
+		let cHref = $(this).attr('href');
+		$('#adminView').attr('src', cHref);
+		if($(this).hasClass('SameLink')) {
+			let darkParam;
+			if(cHref.indexOf('?') > 0) {
+				darkParam = cHref + '&site=GHQ';
+			} else {
+				darkParam = cHref + '?site=GHQ';
+			}
+			$('#adminView02').attr('src', darkParam);
+		} else {
+			let gHref = $(this).attr("gHref");
+			$('#adminView02').attr('src', gHref);
+		}
+	});
+	$('.all_view').on('click', function() {
+		$('#lnb').toggleClass('on');
+		if($('#lnb').hasClass('on')){
+			$('#lnb li').addClass('on');
+			$('#lnb ul li ul').show();
+		} else {
+			$('#lnb li').removeClass('on');
+			$('#lnb ul li ul').hide();
+		};
+	});
+	$('.top_view').on('click', function() {
+		$('#lnb').scrollTop('0');
+	});
+</script>
+<!-- //script -->
+</body>
+</html>

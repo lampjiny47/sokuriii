@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="guide_inc/guide_top_GHQ.shtml"-->
+	<link rel="stylesheet" type="text/css" href="../GHQ/m/css/g_common.css" />
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<ul class="sorting">
+			<li><a href="html_10etc.shtml?depth=6&depthSub=11">HMC 보기</a></li>
+			<li><a href="html_10etc_GHQ.shtml?depth=6&depthSub=11">GHQ 보기</a></li>
+		</ul>
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">Etc</button>
+					<ul class="sub">
+						<li class="selected"><button id="item1_1">flag</button></li>
+						<li><button id="item1_2">tooltip</button></li>
+						<li><button id="item1_3">chk_toggle</button></li>
+						<li><button id="item1_4">no-data</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+		<!-- contents -->
+		<div id="contents">
+			<h3>ETC</h3>
+			<div id="uio_item1_1" class="component GHQfont">
+				<h4>기본Flag</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<span class="flag_mid01">답변완료</span>
+							<span class="flag_mid02">답변완료</span>
+							<span class="flag_mid03">답변완료</span>
+							<span class="flag_mid04">답변완료</span>
+						</pre>
+					</li>
+					
+					
+				</ol>
+				<ol class="design">
+					<li style="margin-top:30px;">
+						<span class="flag_mid01">답변완료</span>
+						<span class="flag_mid02">답변완료</span>
+						<span class="flag_mid03">답변완료</span>
+						<span class="flag_mid04">답변완료</span>
+					</li>					
+				</ol>
+				<h4>big size</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<span class="flag_big01">답변완료</span>
+							<span class="flag_big02">답변완료</span>
+						</pre>
+					</li>
+					
+					
+				</ol>
+				<ol class="design">
+					<li style="margin-top:30px;">
+						<span class="flag_big01">답변완료</span>
+						<span class="flag_big02">답변완료</span>
+					</li>					
+				</ol>
+				<h4>small size</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<span class="flag_small01">텍스트</span>
+							<span class="flag_small02">텍스트</span>
+							<span class="flag_small03">텍스트</span>
+						</pre>
+					</li>
+					
+					
+				</ol>
+				<ol class="design">
+					<li style="margin-top:30px;">
+						<span class="flag_small01">텍스트</span>
+						<span class="flag_small02">텍스트</span>
+						<span class="flag_small03">텍스트</span>
+					</li>					
+				</ol>
+			</div>			
+			<div id="uio_item1_2" class="component GHQfont">
+				<h4>Tooltip</h4>				
+			</div>
+			<div id="uio_item1_3" class="component GHQfont">
+				<h4>chk_toggle</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<label class="chk_toggle">
+								<input type="checkbox" name="" value="" />
+								<span>이벤트 광고 받기 on/off</span>
+							</label></pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<label class="chk_toggle">
+							<input type="checkbox" name="" value="" />
+							<span>이벤트 광고 받기 on/off</span>
+						</label>
+					</li>
+				</ol>
+			</div>
+			<div id="uio_item1_4" class="component GHQfont">
+				<h4>no-data</h4>
+				<ol class="pre">
+					<li>
+						<div><div id="highlighter_22938" class="syntaxhighlighter  html"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">div</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"no_data"</code><code class="html plain">&gt; </code><code class="html comments">&lt;!-- no-data 페이지 종류에 따라 class alarm, review, history, promotion, point 추가--&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">p</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"tit"</code><code class="html plain">&gt;구매중인 상품이 없습니다.&lt;/</code><code class="html keyword">p</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">p</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"txt"</code><code class="html plain">&gt;내차사기는 믿고 맡길 수 있는&lt;</code><code class="html keyword">br</code><code class="html plain">&gt;현대인증 중고차와 함께하세요.&lt;/</code><code class="html keyword">p</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn_area"</code><code class="html plain">&gt;&lt;</code><code class="html keyword">a</code> <code class="html color1">href</code><code class="html plain">=</code><code class="html string">"#"</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn_mid01"</code><code class="html plain">&gt;홈으로 가기&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="no_data">
+							<p class="tit">구매중인 상품이 없습니다.</p>
+							<p class="txt">내차사기는 믿고 맡길 수 있는<br>현대인증 중고차와 함께하세요.</p>
+							<div class="btn_area">
+								<a href="#" class="btn_mid02">홈으로 가기</a>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+</body>
+</html>
