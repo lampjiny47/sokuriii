@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/guide_top.shtml"-->
+	<link rel="stylesheet" href="./css/guide_icon.css">
+	<style>
+		.iconWrap{padding: 20px;}
+		.iconContainer{display: flex;flex-wrap: wrap;gap: 20px;margin: 20px 0;}
+		.iconContainer > div{width: 23%;padding-left: 15px;border-left:3px solid #439ffc;}
+		h5{margin-top: 20px;}
+		.iconContainer > div img{border:1px solid #439ffc;}
+		.iconContainer div p.fileName{margin-top: 15px;}
+		.iconContainer.info_icon{gap: 0;}
+		.iconContainer.info_icon > div{width: 90px;border: none;}
+		.iconContainer.info_icon > div::before{
+			padding-bottom: 5px;
+			border: 1px solid #439ffc;
+		}
+	</style>
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<ul class="sorting">
+			<li><a href="html_05icon.shtml?depth=3&depthSub=6">HMC 보기</a></li>
+			<li><a href="html_05icon_GHQ.shtml?depth=3&depthSub=6">GHQ 보기</a></li>
+		</ul> 
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">Icon 가이드</button>
+					<ul class="sub">
+						<li><button id="item1_1">HMC UI Icon 가이드</button></li>
+						<li><button id="item1_2">HMC Info Icon 가이드</button></li>
+						<li><button id="item1_3">HMC icon size 및 color 변수형</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+
+		<!-- contents -->
+		<div id="contents">
+			<h3>HMC ICON 가이드</h3>
+			<p>UI icon은 src 경로 맞춰서 사용, 가이드 내 class 무관</p>
+			<p>Info icon에 option_key는 개발 class이므로 class 사용 이외 나머지는 스프라이트 좌표값 사용하며, 가이드 내 class 무관 </p>
+			<div id="uio_item1_1" class="component">
+				<h4>Ui Icon</h4>
+				<p class="explanation">* 아이콘 영역 클릭 시 해당 src COPY</p>
+				<ol class="design">
+					<li>
+						<h5>32px ui icon</h5>
+						<div class="iconWrap">
+							<div class="iconContainer" id="ui_icon_01"></div>
+						</div>
+						<h5>24px ui icon</h5>
+						<div class="iconWrap">
+							<div class="iconContainer" id="ui_icon_02"></div>
+						</div>
+						<h5>16px ui icon</h5>
+						<div class="iconWrap">
+							<div class="iconContainer" id="ui_icon_03"></div>
+						</div>
+					</li>
+				</ol>
+			</div>
+			<div id="uio_item1_2" class="component">
+				<h4>Info Icon</h4>
+				<h5>60px Info icon</h5>
+					<p>class 사용 X</p>
+				<ol class="pre">
+					<li>
+						<pre class="brush: css;">
+							&.car{
+								@include Mix_Info_Icon_01(0 0);
+							}
+							&.bell{
+								@include Mix_Info_Icon_01(-60px 0);
+							}
+							&.qna{
+								@include Mix_Info_Icon_01(-120px 0);
+							}
+							&.review{
+								@include Mix_Info_Icon_01(-180px 0);
+							}
+							&.promotion{
+								@include Mix_Info_Icon_01(-240px 0);
+							}
+							&.point{
+								@include Mix_Info_Icon_01(-300px 0);
+							}
+							&.payment{
+								@include Mix_Info_Icon_01(-360px 0);
+							}
+							&.addcar{
+								@include Mix_Info_Icon_01(-420px 0);
+							}
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon nodata">
+							<div class="car"></div>
+							<div class="bell"></div>
+							<div class="qna"></div>
+							<div class="review"></div>
+							<div class="promotion"></div>
+							<div class="point"></div>
+							<div class="payment"></div>
+							<div class="addcar"></div>
+						</div>
+					</li>
+				</ol>
+
+
+				<ol class="pre">
+					<li>
+						<h5>48px Info icon</h5>
+						<p>class 사용(개발에서 정해준 클래스 이므로 빈 아이콘은 추후 스프라이트 이미지에 추가)</p>
+						<p>* 아이콘 영역 클릭시 해당 class copy</p>
+						<pre class="brush: html;">
+							<!-- line 1 -->
+							<div class="option_key001"></div>
+							<div class="option_key002"></div>
+							<div class="option_key003"></div>
+							<div class="option_key004"></div>
+							<div class="option_key005"></div>
+							<div class="option_key006"></div>
+							<div class="option_key007"></div>
+							<div class="option_key008"></div>
+							<div class="option_key009"></div>
+							<div class="option_key010"></div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<!-- line 1 -->
+						<div class="iconContainer info_icon">
+							<div class="option_key001"></div>
+							<div class="option_key002"></div>
+							<div class="option_key003"></div>
+							<div class="option_key004"></div>
+							<div class="option_key005"></div>
+							<div class="option_key006"></div>
+							<div class="option_key007"></div>
+							<div class="option_key008"></div>
+							<div class="option_key009"></div>
+							<div class="option_key010"></div>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<div class="option_key011"></div>
+							<div class="option_key012"></div>
+							<div class="option_key013"></div>
+							<div class="option_key014"></div>
+							<div class="option_key015"></div>
+							<div class="option_key016"></div>
+							<div class="option_key017"></div>
+							<div class="option_key018"></div>
+							<div class="option_key019"></div>
+							<div class="option_key020"></div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<!-- line 2 -->
+						<div class="iconContainer info_icon">
+							<div class="option_key011"></div>
+							<div class="option_key012"></div>
+							<div class="option_key013"></div>
+							<div class="option_key014"></div>
+							<div class="option_key015"></div>
+							<div class="option_key016"></div>
+							<div class="option_key017"></div>
+							<div class="option_key018"></div>
+							<div class="option_key019"></div>
+							<div class="option_key020"></div>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<div class="option_key021"></div>
+							<div class="option_key022"></div>
+							<div class="option_key023"></div>
+							<div class="option_key024"></div>
+							<div class="option_key025"></div>
+							<div class="option_key026"></div>
+							<div class="option_key027"></div>
+							<div class="option_key028"></div>
+							<div class="option_key029"></div>
+							<div class="option_key030"></div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<!-- line 3 -->
+						<div class="iconContainer info_icon">
+							<div class="option_key021"></div>
+							<div class="option_key022"></div>
+							<div class="option_key023"></div>
+							<div class="option_key024"></div>
+							<div class="option_key025"></div>
+							<div class="option_key026"></div>
+							<div class="option_key027"></div>
+							<div class="option_key028"></div>
+							<div class="option_key029"></div>
+							<div class="option_key030"></div>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<div class="option_key031"></div>
+							<div class="option_key032"></div>
+							<div class="option_key033"></div>
+							<div class="option_key034"></div>
+							<div class="option_key035"></div>
+							<div class="option_key036"></div>
+							<div class="option_key037"></div>
+							<div class="option_key038"></div>
+							<div class="option_key039"></div>
+							<div class="option_key040"></div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<!-- line 4  -->
+						<div class="iconContainer info_icon">
+							<div class="option_key031"></div>
+							<div class="option_key032"></div>
+							<div class="option_key033"></div>
+							<div class="option_key034"></div>
+							<div class="option_key035"></div>
+							<div class="option_key036"></div>
+							<div class="option_key037"></div>
+							<div class="option_key038"></div>
+							<div class="option_key039"></div>
+							<div class="option_key040"></div>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<h5>PDP 아이콘</h5>
+						<p>class 사용 X Mixin 사용</p>
+						<pre class="brush: css;">
+							_icon{
+								&01{
+									@include Mix_Info_Icon_PDP_02(0 0);
+								}
+								&02{
+									@include Mix_Info_Icon_PDP_02(-48px 0);
+								}
+								&03{
+									@include Mix_Info_Icon_PDP_02(-96px 0);
+								}
+								&04{
+									@include Mix_Info_Icon_PDP_02(-144px 0);
+								}
+								&05{
+									@include Mix_Info_Icon_PDP_02(-192px 0);
+								}
+								&06{
+									@include Mix_Info_Icon_PDP_02(-240px 0);
+								}
+								&07{
+									@include Mix_Info_Icon_PDP_02(-288px 0);
+								}
+								&08{
+									@include Mix_Info_Icon_PDP_02(-336px 0);
+								}
+							}
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="pdp_icon01"></div>
+							<div class="pdp_icon02"></div>
+							<div class="pdp_icon03"></div>
+							<div class="pdp_icon04"></div>
+							<div class="pdp_icon05"></div>
+							<div class="pdp_icon06"></div>
+							<div class="pdp_icon07"></div>
+							<div class="pdp_icon08"></div>
+						</div>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<h5>36px Info icon</h5>
+						<p>class 사용  X</p>
+						<pre class="brush: css;">
+							&_cs03{
+								@include Mix_Info_Icon_03(0 0);
+							}
+							&_contactus03{
+								@include Mix_Info_Icon_03(-36px 0);
+							}
+							&_notice03{
+								@include Mix_Info_Icon_03(-72px 0);
+							}
+							&_chatbot03{
+								@include Mix_Info_Icon_03(-108px 0);
+							}
+							&_purchase03{
+								@include Mix_Info_Icon_03(-144px 0);
+							}
+							&_phone03{
+								@include Mix_Info_Icon_03(-180px 0);
+							}
+							&_notice_car03{
+								@include Mix_Info_Icon_03(-216px 0);
+							}
+							&_cuv_service03{
+								@include Mix_Info_Icon_03(-252px 0);
+							}
+							&_check_car03{
+								@include Mix_Info_Icon_03(-288px 0);
+							}
+							&_as_info03{
+								@include Mix_Info_Icon_03(-324px 0);
+							}
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="info_cs03"></div>
+							<div class="info_contactus03"></div>
+							<div class="info_notice03"></div>
+							<div class="info_chatbot03"></div>
+							<div class="info_purchase03"></div>
+							<div class="info_phone03"></div>
+							<div class="info_notice_car03"></div>
+							<div class="info_cuv_service03"></div>
+							<div class="info_check_car03"></div>
+							<div class="info_as_info03"></div>
+						</div>
+					</li>
+				</ol>
+				
+				<ol class="pre">
+					<li>
+						<pre class="brush: css;">
+							&_notificat_ion03{
+								@include Mix_Info_Icon_03(-0px -36px);
+							}
+							&_certificate03{
+								@include Mix_Info_Icon_03(-36px -36px);
+							}
+							&_phone03{
+								@include Mix_Info_Icon_03(-72px -36px);
+							}
+							&_receipt03{
+								@include Mix_Info_Icon_03(-108px -36px);
+							}
+							&_record03{
+								@include Mix_Info_Icon_03(-144px -36px);
+							}
+							&_document03{
+								@include Mix_Info_Icon_03(-180px -36px);
+							}
+							&_graph_l03{
+								@include Mix_Info_Icon_03(-216px -36px);
+							}
+							&_graph_r03{
+								@include Mix_Info_Icon_03(-252px -36px);
+							}
+							&_graph_s03{
+								@include Mix_Info_Icon_03(-288px -36px);
+							}
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="info_notificat_ion03"></div>
+							<div class="info_certificate03"></div>
+							<div class="info_phone03"></div>
+							<div class="info_receipt03"></div>
+							<div class="info_record03"></div>
+							<div class="info_document03"></div>
+							<div class="info_graph_l03"></div>
+							<div class="info_graph_r03"></div>
+							<div class="info_graph_s03"></div>
+						</div>
+					</li>
+				</ol>
+			</div>
+			<div id="uio_item1_3" class="component">
+				<h4>사이즈 및 색상 변경되는 icon</h4>			
+				<h4>LOGO</h4>
+				<ol class="pre">
+					<li>
+						<p>class 사용  X</p>
+						<p>@include Icon_hyundai($color)</p>
+						<p>@include Icon_genesis($color)</p>
+						<pre class="brush: css">
+							@include Icon_hyundai($color);
+							@include Icon_genesis($color);
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>						
+						<div class="iconContainer info_icon">
+							<div class="hyundai">
+								<p>현대 160*32</p>
+							</div>
+							<div class="genesis">
+								<p>제네시스 119*24</p>
+							</div>
+						</div>					
+					</li>
+				</ol>
+				<h4>Heart</h4>
+				<ol class="pre">
+					<li>
+						<p>class 사용  X</p>
+						<p>@include Icon_heart("type", $color, "size px")</p>
+						<pre class="brush: css">
+							@include Icon_heart("fill", $COL_black, $size : "32px"); /* size : 32px , 24px, 16px */
+	
+							@include Icon_heart("fill", $COL_activeblue, $size : "24px"); /* size : 32px , 24px, 16px */
+	
+							@include Icon_heart("fill", $COL_gs03, $size : "16px"); /* size : 32px , 24px, 16px */
+	
+							@include Icon_heart("line", $COL_black, $size : "32px"); /* size : 32px , 24px, 16px */
+	
+							@include Icon_heart("line", $COL_sand, $size : "24px"); /* size : 32px , 24px, 16px */
+	
+							@include Icon_heart("line", $COL_activeblue, $size : "16px"); /* size : 32px , 24px, 16px */
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						
+						<div class="iconContainer info_icon">
+							<div class="heart32 f">
+								<p>32px</p>
+							</div>
+							<div class="heart24 f">
+								<p>24px</p>
+							</div>
+							<div class="heart16 f">
+								<p>16px</p>
+							</div>
+							<div class="heart32 l">
+								<p>32px</p>
+							</div>
+							<div class="heart24 l">
+								<p>24px</p>
+							</div>
+							<div class="heart16 l">
+								<p>16px</p>
+							</div>
+						</div>
+					</li>
+				</ol>
+				<h4>close</h4>
+				<ol class="pre">
+					<li>
+						<p>
+							@include Icon_close("color" , 'size')<br>
+							12px, 16px, 24px, 32px
+						</p>
+						<pre class="brush: css">
+							@include Icon_close($COL_black,'12px');
+							@include Icon_close($COL_activeblue,'16px');
+							@include Icon_close($COL_black,'24px');
+							@include Icon_close($COL_activeblue,'32px');
+							/* size : 16px, 24px, 32px */
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="close12">
+								<p>12px</p>
+							</div>
+							<div class="close16">
+								<p>16px</p>
+							</div>
+							<div class="close24">
+								<p>24px</p>
+							</div>
+							<div class="close32">
+								<p>32px</p>
+							</div>
+						</div>
+					</li>
+				</ol>
+				<h4>arrow, add</h4>
+				<ol class="pre">
+					<li>
+						<p>
+							@include Icon_arrow("color")
+						</p>
+						<p>
+							@include Icon_add("color" , 'size')<br>
+							16px, 24px, 32px
+						</p>
+						<pre class="brush: css">
+							@include Icon_arrow($COL_black);
+
+							@include Icon_add($COL_black, '16px');
+							@include Icon_add($COL_black, '24px');
+							@include Icon_add($COL_black, '32px');
+							/* size : 16px, 24px, 32px */
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="arrow16">
+								<p>16px</p>
+							</div>
+							<div class="add16">
+								<p>16px</p>
+							</div>
+							<div class="add24">
+								<p>24px</p>
+							</div>
+							<div class="add32">
+								<p>32px</p>
+							</div>
+						</div>
+					</li>
+				</ol>
+				<h4>star</h4>
+				<ol class="pre">
+					<li>
+						<p>class 사용  X</p>
+						<p>@include Icon_star($color, "size px")<br>
+							16px, 24px, 32px<br>
+							별점 특성 상 repeat css 가 mixin에 적용되어있지 않음.
+						</p>
+						<pre class="brush: css">
+							@include Icon_star($COL_activeblue, '16px');
+							@include Icon_star($COL_activeblue, '24px');
+							@include Icon_star($COL_activeblue, '32px');
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<div class="iconContainer info_icon">
+							<div class="star16">
+								<p>16px</p>
+							</div>
+							<div class="star24">
+								<p>24px</p>
+							</div>
+							<div class="star32">
+								<p>32px</p>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/p/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+<script src="./js/icon.js"></script>
+<script type="text/javascript">
+	/**
+	* Create Element Fuction
+	 */
+	window.onload = (() => {
+		let ui_wrap_01 = document.getElementById('ui_icon_01');
+		let ui_wrap_02 = document.getElementById('ui_icon_02');
+		let ui_wrap_03 = document.getElementById('ui_icon_03');
+		
+		for(let i = 0; i < ui_icon_01.HMC.length; i++){
+			let _item = "<div class='icon_ui" + ui_icon_01.HMC[i].name + "'><img src='/HMC/p/img/icon/icon_ui" + ui_icon_01.HMC[i].name +".svg'> <p class='fileName'>icon_ui"+ ui_icon_01.HMC[i].name + "</p></div>"
+			ui_wrap_01.innerHTML += _item;
+		}
+
+		for(let i = 0; i < ui_icon_02.HMC.length; i++){
+			let _item = "<div class='icon_ui" + ui_icon_02.HMC[i].name + "'><img src='/HMC/p/img/icon/icon_ui" + ui_icon_02.HMC[i].name +".svg'> <p class='fileName'>icon_ui"+ ui_icon_02.HMC[i].name + "</p></div>"
+			ui_wrap_02.innerHTML += _item;
+		}
+
+		for(let i = 0; i < ui_icon_03.HMC.length; i++){
+			let _item = "<div class='icon_ui" + ui_icon_03.HMC[i].name + "'><img src='/HMC/p/img/icon/icon_ui" + ui_icon_03.HMC[i].name +".svg'> <p class='fileName'>icon_ui"+ ui_icon_03.HMC[i].name + "</p></div>"
+			ui_wrap_03.innerHTML += _item;
+		}
+	})();
+
+	/**
+	 * copy text
+	 */
+	let _element_ui = document.querySelectorAll('[class^=icon_ui_]');
+	let _class_info = document.querySelectorAll('[class^=option_key]');
+	// let _element_info = document.querySelectorAll('[class^=info_]');
+	// let _nodata_info = document.querySelectorAll('.nodata > div');
+	_element_ui.forEach((el,index) => {
+		el.addEventListener('click',(e) => {
+			_srcData ='./.' +  el.childNodes[0].getAttribute('src');
+			window.navigator.clipboard.writeText(
+				_srcData).then(() => {
+				alert("copy success\n" + "src = " +  _srcData)
+			})
+		})
+	});
+	_class_info.forEach((el,index) => {
+		el.addEventListener('click',(e) => {
+			window.navigator.clipboard.writeText(el.className).then(() => {
+				alert("copy success\n" + "Class Name = " +  el.className)
+			})
+		})
+	});
+	
+</script>
+
+</body>
+</html>

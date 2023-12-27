@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/CA_head.shtml" -->
+</head> 
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<h1>CUV Auction 비매집중개</h1>
+	<br>
+	<button class="top_view">TOP</button>
+	<!-- container -->
+	<div class="CA_g_wrap">
+		<div class="left">
+			<h2 class="sec_tit">상품</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_00000000.shtml">상품목록</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml">상품상세</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=3">- 튜닝이력조회</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=4">- 압류/저당/영치 조회</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=5">- 리콜 이력 조회</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=6">- 정비 이력 조회</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=7">- 이미지확대 보기</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_02010000.shtml?pop=8">- 입찰하기</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/01_goods/CA_PC_03_00000000.shtml?pop=1">- 공통 공지사항</a></li>
+			</ol>
+			<br>
+			<h2 class="sec_tit">내입찰</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/02_mybid/CA_PC_04_01010000.shtml">목록</a></li>
+			</ol>
+			<br>
+			<h2 class="sec_tit">내거래</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/03_mydeal/CA_PC_04_02010000.shtml">목록</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/03_mydeal/CA_PC_04_02020100.shtml">상세</a></li>
+			</ol>
+			<br>
+			<h2 class="sec_tit">고객센터</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/04_customer/CA_PC_06_01000000.shtml">자주하는 질문</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/04_customer/CA_PC_06_02010000.shtml">공지사항 목록</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/04_customer/CA_PC_06_02020000.shtml">공지사항 상세</a></li>
+			</ol>
+		</div>
+		<div class="left">
+			<h2 class="sec_tit">로그인</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml">로그인</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=1">- 매매상사 확인</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=2">- 정보입력</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=3">- 휴대폰번호 인증</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=4">- 변경완료</a></li>
+			</ol>
+			<br>
+			<h2 class="sec_tit">회원가입</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=5">- 약관동의</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=6">- 매매상사 확인</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=7">- 정보입력</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_02_01000000.shtml?pop=8">- 가입완료</a></li>
+			</ol>
+			<br>
+			<h2 class="sec_tit">내 정보</h2>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_04_03000000.shtml">내 정보</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_04_03000000.shtml?pop=1">- 매매상사 확인</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/05_members/CA_PC_04_03000000.shtml?pop=2">- 휴대폰번호 인증</a></li>
+			</ol>
+			<br>
+			<ol style="font-size: 16px;line-height: 24px">
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_03010000.shtml">이용약관</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_03020000.shtml">개인정보 처리 방침</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_04020000.shtml">접속불가</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_04030000.shtml">일시적 사용중단</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_04040000.shtml">시스템점검</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/CA_PC_02_04050000.shtml">이용안내</a></li>
+			</ol>
+		</div>
+
+		<!-- Publishing Guide -->
+		<div class="right">
+			<h2 class="sec_tit">Publishing Guide</h2>
+			<ol style="font-size: 20px;line-height: 36px">
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/layout.shtml">Layout</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/component.shtml">Component</a></li> 
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/form.shtml">Form group</a></li> 
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/unit.shtml">Unit + pagination</a></li>
+				<li><a target="_blank" href="/CA/p/SHTML/00_common/table.shtml">Table</a></li>
+			</ol>
+		</div>
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<!-- //script -->
+</body>
+</html>

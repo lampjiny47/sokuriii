@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/guide_top.shtml"-->
+	<link rel="stylesheet" href="./css/guide_icon.css">
+</head>
+<style>
+	.component .txt02{margin:4px 0 0;color:#767676;font-size:16px;font-weight:400;line-height:24px;}
+</style>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<ul class="sorting">
+			<li><a href="html_10Etc.shtml?depth=3&depthSub=11">HMC 보기</a></li>
+			<li><a href="html_10Etc_GHQ.shtml?depth=3&depthSub=11">GHQ 보기</a></li>
+		</ul>
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">table 가이드</button>
+					<ul class="sub">
+						<li><button id="item1_1">HMC table 가이드</button></li>
+						<li><button id="item1_2">HMC no_data 가이드</button></li>
+						<li><button id="item2_1">Flag 가이드</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+
+		<!-- contents -->
+		<div id="contents">
+			<h3>HMC table 가이드</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>table 가이드</h4>
+				<!-- <ol class="pre">
+					<li>
+						<h5>Type1</h5>
+						<pre class="brush: html;">
+							<table class="table type01">
+								<caption>font 14px</caption>
+								<colgroup>
+									<col width="126px">
+									<col width="*">
+									<col width="126px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>연식</th>
+										<td>2020년</td>
+										<th>차종</th>
+										<td>승용/대형</td>
+									</tr>
+									<tr>
+										<th>주행거리</th>
+										<td>21,713km</td>
+										<th>연료</th>
+										<td>가솔린</td>
+									</tr>
+									<tr>
+										<th>배기량</th>
+										<td>2,399cc</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>승차인원</th>
+										<td>5인</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>차량번호</th>
+										<td>24더 3215</td>
+										<th>변속기</th>
+										<td>오토</td>
+									</tr>
+									<tr>
+										<th>외관색상</th>
+										<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+										<th>실내색상</th>
+										<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)</td>
+									</tr>
+								</tbody>
+							</table>
+						</pre>
+					</li>
+				</ol> -->
+				<ol class="pre">
+					<li>
+						<h5>Type1</h5>
+						<pre class="brush: html;">
+							<table class="table type01">
+								<caption>font 14px</caption>
+								<colgroup>
+									<col width="126px">
+									<col width="*">
+									<col width="126px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>연식</th>
+										<td>2020년</td>
+										<th>차종</th>
+										<td>승용/대형</td>
+									</tr>
+									<tr>
+										<th>주행거리</th>
+										<td>21,713km</td>
+										<th>연료</th>
+										<td>가솔린</td>
+									</tr>
+									<tr>
+										<th>배기량</th>
+										<td>2,399cc</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>승차인원</th>
+										<td>5인</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>차량번호</th>
+										<td>24더 3215</td>
+										<th>변속기</th>
+										<td>오토</td>
+									</tr>
+									<tr>
+										<th>외관색상</th>
+										<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+										<th>실내색상</th>
+										<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)</td>
+									</tr>
+								</tbody>
+							</table>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>Type1 <b style="color:#000">(font-size 14)</b></h5>
+						<table class="table type01">
+							<caption>font 14px</caption>
+							<colgroup>
+								<col width="126px">
+								<col width="*">
+								<col width="126px">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>연식</th>
+									<td>2020년</td>
+									<th>차종</th>
+									<td>승용/대형</td>
+								</tr>
+								<tr>
+									<th>주행거리</th>
+									<td>21,713km</td>
+									<th>연료</th>
+									<td>가솔린</td>
+								</tr>
+								<tr>
+									<th>배기량</th>
+									<td>2,399cc</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>승차인원</th>
+									<td>5인</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>차량번호</th>
+									<td>24더 3215</td>
+									<th>변속기</th>
+									<td>오토</td>
+								</tr>
+								<tr>
+									<th>외관색상</th>
+									<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+									<th>실내색상</th>
+									<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<h5>Type2</h5>
+						<pre class="brush: html;">
+							<table class="table type02">
+								<caption>font 15px</caption>
+								<colgroup>
+									<col width="126px">
+									<col width="*">
+									<col width="126px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>연식</th>
+										<td>2020년</td>
+										<th>차종</th>
+										<td>승용/대형</td>
+									</tr>
+									<tr>
+										<th>주행거리</th>
+										<td>21,713km</td>
+										<th>연료</th>
+										<td>가솔린</td>
+									</tr>
+									<tr>
+										<th>배기량</th>
+										<td>2,399cc</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>승차인원</th>
+										<td>5인</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>차량번호</th>
+										<td>24더 3215</td>
+										<th>변속기</th>
+										<td>오토</td>
+									</tr>
+									<tr>
+										<th>외관색상</th>
+										<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+										<th>실내색상</th>
+										<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)</td>
+									</tr>
+								</tbody>
+							</table>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>Type2 <b style="color:#000">(font-size 15)</b></h5>
+						<table class="table type02">
+							<caption>font 15px</caption>
+							<colgroup>
+								<col width="126px">
+								<col width="*">
+								<col width="126px">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>연식</th>
+									<td>2020년</td>
+									<th>차종</th>
+									<td>승용/대형</td>
+								</tr>
+								<tr>
+									<th>주행거리</th>
+									<td>21,713km</td>
+									<th>연료</th>
+									<td>가솔린</td>
+								</tr>
+								<tr>
+									<th>배기량</th>
+									<td>2,399cc</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>승차인원</th>
+									<td>5인</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>차량번호</th>
+									<td>24더 3215</td>
+									<th>변속기</th>
+									<td>오토</td>
+								</tr>
+								<tr>
+									<th>외관색상</th>
+									<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+									<th>실내색상</th>
+									<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<h5>Type3</h5>
+						<pre class="brush: html;">
+							<table class="table type03">
+								<caption>font 16px</caption>
+								<colgroup>
+									<col width="126px">
+									<col width="*">
+									<col width="126px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>연식</th>
+										<td>2020년</td>
+										<th>차종</th>
+										<td>승용/대형</td>
+									</tr>
+									<tr>
+										<th>주행거리</th>
+										<td>21,713km</td>
+										<th>연료</th>
+										<td>가솔린</td>
+									</tr>
+									<tr>
+										<th>배기량</th>
+										<td>2,399cc</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>승차인원</th>
+										<td>5인</td>
+										<th>최초등록</th>
+										<td>2022.04.26</td>
+									</tr>
+									<tr>
+										<th>차량번호</th>
+										<td>24더 3215</td>
+										<th>변속기</th>
+										<td>오토</td>
+									</tr>
+									<tr>
+										<th>외관색상</th>
+										<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+										<th>실내색상</th>
+										<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)testtesttesttesttesttesttest</td>
+									</tr>
+								</tbody>
+							</table>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>Type3 <b style="color:#000">(font-size 16, padding 16)</b></h5>
+						<table class="table type03">
+							<caption>font 16px</caption>
+							<colgroup>
+								<col width="126px">
+								<col width="*">
+								<col width="126px">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>연식</th>
+									<td>2020년</td>
+									<th>차종</th>
+									<td>승용/대형</td>
+								</tr>
+								<tr>
+									<th>주행거리</th>
+									<td>21,713km</td>
+									<th>연료</th>
+									<td>가솔린</td>
+								</tr>
+								<tr>
+									<th>배기량</th>
+									<td>2,399cc</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>승차인원</th>
+									<td>5인</td>
+									<th>최초등록</th>
+									<td>2022.04.26</td>
+								</tr>
+								<tr>
+									<th>차량번호</th>
+									<td>24더 3215</td>
+									<th>변속기</th>
+									<td>오토</td>
+								</tr>
+								<tr>
+									<th>외관색상</th>
+									<td>사이버 그레이 메탈릭(팬텀블랙)</td>
+									<th>실내색상</th>
+									<td>블루/하바나브라운투톤(리무진전용/하바나 브라운시트)testtesttesttesttesttesttest</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ol>
+				<ol class="pre">
+					<li>
+						<h5>Type2</h5>
+						<pre class="brush: html;">
+							<div class="table_wrap">
+								<div class="table">
+									<div class="thead">
+										<div class="tr">
+											<div class="th">구분</div>
+											<div class="th">주요부품</div>
+										</div>
+									</div>
+									<div class="tbody">
+										<div class="tr">
+											<div class="th">블릿이 있는 리스트</div>
+											<div class="td">
+												<ul>
+													<li>실린더 헤드/블록과 그 내부부품</li>
+													<li>벨브장치와 그 구성품</li>
+													<li>오일펌프, 워터 펌프, 서모스탯 및 개스킷</li>
+													<li>흡/배기 매니폴드 및 플라이휠</li>
+													<li>엔진 타이밍 텐셔너, 타이밍 체인, 오일쿨러 및 오일제어밸브</li>
+													<li>각종 엔진 내부 개스킷 및 씰류</li>
+												</ul>
+											</div>
+										</div>
+										<div class="tr">
+											<div class="th">변속기, 추진축</div>
+											<div class="td">내용</div>
+										</div>
+										<div class="tr">
+											<div class="th">타이틀이 있는 형태</div>
+											<div class="td">
+												외장<br>
+												썬루프, 전동접이 사이드미러<br>
+												내장<br>
+												통풍시트(운전석, 동승석), 전동시트(운전석, 동승석, 뒷자리), 가죽시트, 열선(앞, 뒤), 하이패스 내장<br>
+												안전<br>
+												주차보조(전방감지센서, 후방감지센서), 후방카메라, 가죽시트<br>
+												편의<br>
+												스마트키, 에어컨(오토에어컨)<br>
+												멀티미디어<br>
+												네비게이션<br>
+											</div>
+										</div>
+										<div class="tr">
+											<div class="th">블릿이 있는 리스트</div>
+											<div class="td">
+												<ul>
+													<li>실린더 헤드/블록과 그 내부부품</li>
+													<li>벨브장치와 그 구성품</li>
+													<li>오일펌프, 워터 펌프, 서모스탯 및 개스킷</li>
+													<li>흡/배기 매니폴드 및 플라이휠</li>
+													<li>엔진 타이밍 텐셔너, 타이밍 체인, 오일쿨러 및 오일제어밸브</li>
+													<li>각종 엔진 내부 개스킷 및 씰류</li>
+												</ul>
+											</div>
+										</div>
+										<div class="tr">
+											<div class="th">변속기, 추진축</div>
+											<div class="td">내용</div>
+										</div>
+										<div class="tr">
+											<div class="th">타이틀이 있는 형태</div>
+											<div class="td">
+												외장<br>
+												썬루프, 전동접이 사이드미러<br>
+												내장<br>
+												통풍시트(운전석, 동승석), 전동시트(운전석, 동승석, 뒷자리), 가죽시트, 열선(앞, 뒤), 하이패스 내장<br>
+												안전<br>
+												주차보조(전방감지센서, 후방감지센서), 후방카메라, 가죽시트<br>
+												편의<br>
+												스마트키, 에어컨(오토에어컨)<br>
+												멀티미디어<br>
+												네비게이션<br>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>head stikey table</h5>
+						<div class="table_wrap">
+							<div class="table">
+								<div class="thead">
+									<div class="tr">
+										<div class="th">구분</div>
+										<div class="th">주요부품</div>
+									</div>
+								</div>
+								<div class="tbody">
+									<div class="tr">
+										<div class="th">블릿이 있는 리스트</div>
+										<div class="td">
+											<ul>
+												<li>실린더 헤드/블록과 그 내부부품</li>
+												<li>벨브장치와 그 구성품</li>
+												<li>오일펌프, 워터 펌프, 서모스탯 및 개스킷</li>
+												<li>흡/배기 매니폴드 및 플라이휠</li>
+												<li>엔진 타이밍 텐셔너, 타이밍 체인, 오일쿨러 및 오일제어밸브</li>
+												<li>각종 엔진 내부 개스킷 및 씰류</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tr">
+										<div class="th">변속기, 추진축</div>
+										<div class="td">내용</div>
+									</div>
+									<div class="tr">
+										<div class="th">타이틀이 있는 형태</div>
+										<div class="td">
+											외장<br>
+											썬루프, 전동접이 사이드미러<br>
+											내장<br>
+											통풍시트(운전석, 동승석), 전동시트(운전석, 동승석, 뒷자리), 가죽시트, 열선(앞, 뒤), 하이패스 내장<br>
+											안전<br>
+											주차보조(전방감지센서, 후방감지센서), 후방카메라, 가죽시트<br>
+											편의<br>
+											스마트키, 에어컨(오토에어컨)<br>
+											멀티미디어<br>
+											네비게이션<br>
+										</div>
+									</div>
+									<div class="tr">
+										<div class="th">블릿이 있는 리스트</div>
+										<div class="td">
+											<ul>
+												<li>실린더 헤드/블록과 그 내부부품</li>
+												<li>벨브장치와 그 구성품</li>
+												<li>오일펌프, 워터 펌프, 서모스탯 및 개스킷</li>
+												<li>흡/배기 매니폴드 및 플라이휠</li>
+												<li>엔진 타이밍 텐셔너, 타이밍 체인, 오일쿨러 및 오일제어밸브</li>
+												<li>각종 엔진 내부 개스킷 및 씰류</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tr">
+										<div class="th">변속기, 추진축</div>
+										<div class="td">내용</div>
+									</div>
+									<div class="tr">
+										<div class="th">타이틀이 있는 형태</div>
+										<div class="td">
+											외장<br>
+											썬루프, 전동접이 사이드미러<br>
+											내장<br>
+											통풍시트(운전석, 동승석), 전동시트(운전석, 동승석, 뒷자리), 가죽시트, 열선(앞, 뒤), 하이패스 내장<br>
+											안전<br>
+											주차보조(전방감지센서, 후방감지센서), 후방카메라, 가죽시트<br>
+											편의<br>
+											스마트키, 에어컨(오토에어컨)<br>
+											멀티미디어<br>
+											네비게이션<br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>			
+			<div id="uio_item1_2" class="component">
+				<h4>no-data</h4>
+				<ol class="pre">
+					<li>
+						<h5>Type1</h5>
+						<pre class="brush: html;">
+							<div class="no_data"> <!-- no-data 페이지 종류에 따라 class alarm, review, history, promotion, point 추가-->
+								<p class="tit">검색하신 결과를 찾을 수 없습니다.</p>
+								<p class="txt">모델명 혹은 차대번호를<br />다시 입력해 보세요.</p>
+								<div class="btn_area">
+									<a href="#" class="btn_small color02">보유차량 등록하기</a>
+								</div>
+							</div>
+						</pre>
+					</li>
+					<li>
+						<h5>Type2</h5>
+						<pre class="brush: html;">
+							<div class="no_data notice">
+								<p class="tit02">게시된 공지사항이 없습니다.</p>
+								<div class="btn_area">
+									<a href="#" class="btn_small color02">홈으로 가기</a>
+								</div>
+							</div>
+						</pre>
+					</li>
+				</ol>
+				<ol class="design">
+					<li>
+						<h5>Type1 <b style="color:#000">타이틀+텍스트</b></h5>
+						<div class="no_data car">
+							<p class="tit">검색하신 결과를 찾을 수 없습니다.</p>
+							<p class="txt">모델명 혹은 차대번호를<br />다시 입력해 보세요.</p>
+							<div class="btn_area">
+								<a href="#" class="btn_small color02">보유차량 등록하기</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h5>Type2 <b style="color:#000">타이틀</b></h5>
+						<div class="no_data review">
+							<p class="tit02">게시된 공지사항이 없습니다.</p>
+							<div class="btn_area">
+								<a href="#" class="btn_small color02">홈으로 가기</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h5>Type2 <b style="color:#000">버튼 간격 확인용</b></h5>
+						<div class="no_data">
+							<p class="tit02">버튼 간격 확인용</p>
+							<div class="btn_area">
+								<a href="#" class="btn_big color02">margin-top 32</a>
+							</div>
+							<div class="btn_area">
+								<a href="#" class="btn_mid color02">margin-top 24</a>
+							</div>
+							<div class="btn_area">
+								<a href="#" class="btn_small color02">margin-top 16</a>
+							</div>
+							<div class="btn_area">
+								<a href="#" class="btn_xsmall color02">margin-top 16</a>
+							</div>
+						</div>
+					</li>
+					<li style="display:flex;justify-content:center;">
+						<div class="no_data car" style="display:inline-block;">car</div>
+						<div class="no_data bell" style="display:inline-block;">bell</div>
+						<div class="no_data qna" style="display:inline-block;">qna</div>
+						<div class="no_data review" style="display:inline-block;">review</div>
+						<div class="no_data promotion" style="display:inline-block;">promotion</div>
+						<div class="no_data point" style="display:inline-block;">point</div>
+						<div class="no_data payment" style="display:inline-block;">payment</div>
+						<div class="no_data addcar" style="display:inline-block;">addcar</div>
+					</li>
+				</ol>
+			</div>
+			<h3>Text Flag 가이드</h3>
+			<div id="uio_item2_1" class="component">
+				<h4>middle size</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<span class="flag_mid01">텍스트 1</span>
+							<span class="flag_mid02">텍스트 2</span>
+							<span class="flag_mid03">텍스트 3</span>
+							<span class="flag_mid04">텍스트 4</span>
+							<span class="flag_mid05">텍스트 5</span>
+							<span class="flag_mid01 ico_video">영상</span>
+						</pre>
+					</li>					
+				</ol>
+				<ol class="design">					
+					<li>
+						<span class="flag_mid01">텍스트 1</span>
+						<span class="flag_mid02">텍스트 2</span>
+						<span class="flag_mid03">텍스트 3</span>
+						<span class="flag_mid04">텍스트 4</span>
+						<span class="flag_mid05">텍스트 5</span>
+						<span class="flag_mid01 ico_video">영상</span>
+					</li>
+				</ol>
+				<h4>large size</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<span class="flag_big01">답변완료</span>
+							<span class="flag_big02">답변완료</span>
+							<span class="flag_big03">답변완료</span>
+							<span class="flag_big04">답변완료</span>
+							<span class="flag_big05">답변완료</span>
+						</pre>
+					</li>
+					
+					
+				</ol>
+				<ol class="design">
+					<li style="margin-top:30px;">
+						<span class="flag_big01">답변완료</span>
+						<span class="flag_big02">답변완료</span>
+						<span class="flag_big03">답변완료</span>
+						<span class="flag_big04">답변완료</span>
+						<span class="flag_big05">답변완료</span>
+					</li>					
+				</ol>					
+			</div>
+
+
+			<!-- <h3></h3>
+			<div id="" class="component">
+				<h4>소제목 or 소제목: 사용예시</h4>
+				<ol class="pre">
+					<li>
+						<h5>타입</h5>
+						<pre class="brush: html;"></pre></li>
+				</ol>
+				<ol class="design">
+					<li></li>
+					<li></li>
+				</ol>
+				or
+				<div class="pre">
+					<pre class="brush: html;"></pre>
+				</div>
+				<div class="design">
+				</div>
+			</div> -->
+			
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/p/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+<!-- <script>
+// 퍼블 UI 확인용
+function pubCompare() {
+	$('.compare_car').on('click', 'label', function() {
+		if($(this).siblings('input').is(':checked')) {
+			$(this).addClass("on");
+		} else {
+			$(this).removeClass("on")
+		}		
+	});
+};
+
+$(document).ready(function() {
+	pubCompare();
+	CPOCompareCheck();
+
+	// 초기날짜셋팅
+	$('#datepic02').datepicker( "setDate", new Date());
+	$('#startDate').datepicker('setDate', new Date(new Date().setMonth(new Date().getMonth()-3)));
+	$('#endDate').datepicker('setDate', new Date());
+});
+	
+</script>
+
+<script>
+$(function(){
+	
+	$(".jQ_Select").on("click",function(){//셀렉트박스 레이어 스크립트
+		CPO.POPUP_open($(this));// 레이어팝업 open
+		CPO_SelectLayer($(this));// 레이어팝업에 data 값 넘기기
+	});
+	$(".jQ_Select_Save").on("click",function(){//셀렉트박스 레이어 스크립트
+		CPO.POPUP_close($(this));// 레이어팝업 close
+		CPO_SelectSave($(this));// 레이어팝업에 data 값 넘기기
+	});
+});
+</script> -->
+
+</body>
+</html>

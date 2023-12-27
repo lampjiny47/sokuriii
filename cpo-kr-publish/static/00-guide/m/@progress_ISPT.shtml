@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+<style type="text/css">
+body.mobile #header{display:none;}
+body.mobile #container2{display:none;}
+body.mobile #lnb{width:100%;}
+.action > i{font-size:11px; opacity:0.5}
+</style>
+</head> 
+<body class="list DEMO">
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<div id="lnb">
+		<ul>
+			<li><a class="action" target="adminView" href="/ISPT/SHTML/00_common/00_PO_layout.shtml">레이아웃 <em>00_common</em></a></li>
+			
+			<li><a class="action" target="adminView">01_members</a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_00000000.shtml">로그인</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_01000000.shtml">이용약관 및 개인정보처리방침</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_01000000.shtml?pop=1">이용약관</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_01000000.shtml?pop=2">개인정보처리방침</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/01_member/AC_MO_01_01000000.shtml?pop=3">주소검색</a></li>
+				</ul>
+			</li>
+
+			<li><a class="action" target="adminView">02_mypage</a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_00000000.shtml">마이페이지 메인</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_01000000.shtml">평가하기</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_02000000.shtml">지난평가</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_00000000.shtml?pop=1">방문평가정보 변경(P)</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_03000000.shtml">내 실적 현황</a></li>
+				</ul>
+			</li>
+
+			<li><a class="action" target="adminView">03_work</a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml">방문평가 상세(기본)</a>
+						<ul>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=1">차량 정보(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=2">튜닝 이력 조회(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=3">보험 이력 조회(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=4">사고 이력 평가(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=5">현재 외관 평가(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=8">현재 외관 평가 상세(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=6">추가 감가 사진등록(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_01000000.shtml?pop=7">기본 사진등록(P)</a></li>
+						</ul>
+					</li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_07_01000000.shtml">방문평가 상세(완료)</a>
+						<ul>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_07_01000000.shtml?pop=1">추가 감가 사진(P)</a></li>
+							<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_07_01000000.shtml?pop=2">기본 사진(P)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+			<li><a class="action" target="adminView">04_cscenter</a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/04_cscenter/AC_MO_05_04000000.shtml">공지사항</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/04_cscenter/AC_MO_05_04000000.shtml?pop=1">공지사항 상세(P)</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/04_cscenter/AC_MO_05_05000000.shtml">FAQ</a></li>
+				</ul>
+			</li>
+
+			<li><a class="action" target="adminView">05_기타</a>
+				<ul>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/05_etc/AC_MO_03_01000000.shtml">이용약관</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/05_etc/AC_MO_03_02000000.shtml">개인정보 처리방침</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/05_etc/AC_MO_04_01000000.shtml">에러 404</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/05_etc/AC_MO_04_02000000.shtml">에러 시스템</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/05_etc/AC_MO_04_03000000.shtml">에러 점검</a></li>
+				</ul>
+			</li>
+			
+			<li><a class="action" target="adminView">backup page</a>
+				<ul>
+					<!-- <li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/00_PO_popup.shtml">Layer Popup 모음</a></li> -->
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/02_mypage/AC_MO_05_01000000_back.shtml">평가예정</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/03_work/AC_MO_06_0103.shtml">사진등록</a></li>
+					<li><a class="action Link" target="adminView" href="/ISPT/SHTML/00_common/AC_MO_02_0100.shtml">업무요청관리</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- container -->
+	<div id="container2" class="mc">
+		<div class="mcbox">
+			<iframe src="/ISPT/SHTML/00_common/00_PO_layout.shtml" class="iframeMC" name="adminView" id="adminView"></iframe>
+		</div>
+
+	</div>
+	<!-- //container -->
+</div>
+<!-- //WRAP -->
+
+<!-- script -->
+<script type="text/javascript" src="js/endUI.js"></script>
+<script type="text/javascript">
+	$('li').each(function(){
+		if ($(this).children().hasClass('lang')){
+				$(this).addClass('haslang');
+		}
+	});
+</script> 
+<!-- //script -->
+</body>
+</html>

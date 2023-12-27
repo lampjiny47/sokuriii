@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>판매목록 : 현대 CUV</title>
+	<link rel="stylesheet" type="text/css" href="../../css/h_order.css">
+</head>
+<body>
+<script type="text/javascript">
+function comma(str) {
+	str = String(str);
+	return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+}
+
+function uncomma(str) {
+	str = String(str);
+	return str.replace(/[^\d]+/g, '');
+} 
+
+function inputNumberFormat(obj) {
+	obj.value = comma(uncomma(obj.value));
+}
+
+function inputOnlyNumberFormat(obj) {
+	obj.value = onlynumber(uncomma(obj.value));
+}
+
+function onlynumber(str) {
+	str = String(str);
+	return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
+}
+</script>
+
+<input type="number" style="width:100%;border:1px solid #ddd;outline:none;" onkeyup="uncomma(this);"  >
+<input type="text" pattern="[0-9]*" inputmode="numeric" style="width:100%;border:1px solid #ddd;outline:none;" onkeyup="inputNumberFormat(this);"  >
+<input type="number" style="width:100%;border:1px solid #ddd;outline:none;" onkeyup="inputOnlyNumberFormat(this);"  >
+<input type="number" style="width:100%;border:1px solid #ddd;outline:none;" onkeyup="onlynumber(this);"  >
+</body>
+</html>

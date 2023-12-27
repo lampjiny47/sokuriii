@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left  -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">Font</button>
+					<ul class="sub">
+						<li><button id="item1_1">popup</button></li>
+						<li><button id="item1_2">toast & alert</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+		<!-- contents -->
+		<div id="contents" class="full">
+			<div id="uio_item1_1" class="component">
+				<h4>popup</h4>
+				<ol class="pre">
+					<li>
+						<pre class="brush: html;">
+							<div class="CPOpop_full" id="FO-FULL"> <!-- class CPOpop_full, CPOpop_modal, CPOpop_bottom -->
+								<div class="p_head"><!-- 타이틀이 없어도 p_head는 상단고정을 위해 필요 -->
+									<h2 class="tit">타이틀</h2>
+								</div>
+								<div class="p_wrap">
+									<!-- contents -->
+									<div class="section_class"><!-- section_class은 임시용 / 실제 페이지에 맞는 클래스 사용 bg가 있을경우 layer_bg, 버튼이 없을경우 no_btn 추가 -->
+										팝업 컨텐츠 추가추가 
+									</div>
+									<!-- //contents -->
+									<!-- sticky -->
+									<div class="btn_sticky">
+										<button type="button" class="btn_big01">확인</button>
+									</div>
+									<!-- //sticky -->
+								</div>
+								<button type="button" class="pop_close">닫기</button>
+							</div>
+						</pre>
+					</li>										
+				</ol>
+				<ol class="design">
+					<li>
+						<button type="button" data-popup="FO-FULL" class="btn_big02">FULL</button>
+						<button type="button" data-popup="FO-MODAL" class="btn_big02">MODAL</button>
+						<button type="button" data-popup="FO-BOTTOM" class="btn_big02">BOTTOM</button>
+
+						<!-- FULL POPUP Layout -->
+						<div class="CPOpop_full" id="FO-FULL">
+							<div class="p_head"><!-- 타이틀이 없어도 p_head는 상단고정을 위해 필요 -->
+								<h2 class="tit">타이틀</h2>
+							</div>
+							<div class="p_wrap">
+								<!-- contents -->
+								<div class="section_class"><!-- section_class은 임시용 / 실제 페이지에 맞는 클래스 사용 bg가 있을경우 layer_bg, 버튼이 없을경우 no_btn 추가 -->
+									팝업 컨텐츠 추가추가 
+								</div>
+								<!-- //contents -->
+								<!-- sticky -->
+								<div class="btn_sticky">
+									<button type="button" class="btn_big01">확인</button>
+								</div>
+								<!-- //sticky -->
+							</div>
+							<button type="button" class="pop_close">닫기</button>
+						</div>
+
+						<!-- MODAL POPUP Layout -->
+						<div class="CPOpop_modal" id="FO-MODAL">
+							<div class="p_inner">
+								<div class="p_head">
+									<h2 class="tit">타이틀</h2>
+								</div>
+								<div class="p_wrap">
+									<!-- contents -->
+									<div class="section_class"><!-- section_class은 임시용 / 실제 페이지에 맞는 클래스 사용 bg가 있을경우 layer_bg, 버튼이 없을경우 no_btn 추가 -->
+										팝업 컨텐츠 추가추가 
+									</div>
+									<!-- //contents -->
+									<!-- sticky -->
+									<div class="btn_sticky">
+										<button type="button" class="btn_big01">확인</button>
+									</div>
+									<!-- //sticky -->
+								</div>
+								<button type="button" class="pop_close">닫기</button>
+							</div>
+						</div>
+
+						<!-- BOTTOM POPUP Layout -->
+						<div class="CPOpop_bottom" id="FO-BOTTOM">
+							<div class="p_head">
+								<h2 class="tit">타이틀</h2>
+							</div>
+							<div class="p_wrap">
+								<!-- contents -->
+								<div class="section_class"><!-- section_class은 임시용 / 실제 페이지에 맞는 클래스 사용 bg가 있을경우 layer_bg, 버튼이 없을경우 no_btn 추가 -->
+									팝업 컨텐츠 추가추가 
+								</div>
+								<!-- //contents -->
+								<!-- sticky -->
+								<div class="btn_sticky">
+									<button type="button" class="btn_big01">확인</button>
+								</div>
+								<!-- //sticky -->
+							</div>
+							<button type="button" class="pop_close">닫기</button>
+						</div>
+					</li>
+				</ol>
+			</div>				
+			
+			<div id="uio_item1_2" class="component">
+				<h4>toast & alert</h4>
+				<ol class="pre">
+					<li> 
+						<h5>script</h5>
+						<pre class="brush:js;">
+							CPO.POPUP_open("CPOAlert_Wrap", "<p class='txt01'>입고알림은 최대 10개까지 등록 가능하며 이미 10개의 알림을 등록하셨습니다.</p>"); //Alert
+							CPO.POPUP_open("CPOAlert_Wrap02", "<p class='txt01'>입고알림은 최대 10개까지 등록 가능하며 이미 10개의 알림을 등록하셨습니다.</p>"); //Alert2
+							CPO.POPUP_toast("CPOToast_Wrap", "차량이 장바구니에 담겼습니다."); //TOAST
+						</pre>
+					</li>										
+				</ol>
+				
+				<ol class="design">
+					<li>
+						<button type="button" id="alertPopup01" class="btn_mid01">alert01</button>
+						<button type="button" id="alertPopup02" class="btn_mid01">alert02</button>
+						<button type="button" id="toastPopup" class="btn_mid02">toast</button>
+
+						<!-- toast POPUP Layout -->
+						<div class="CPOpop_toast" id="CPOToast_Wrap">
+							<div class="message"></div>
+						</div>
+						<!-- Alert POPUP Layout -->
+						<div class="CPOpop_alert" id="CPOAlert_Wrap">
+							<div class="message"></div>
+							<div class="btn_area">
+								<ul>
+									<li><button type="button" class="btn_alert01">확인</button></li>
+								</ul>
+							</div>
+						</div>
+						<!-- Alert POPUP Layout -->
+						<div class="CPOpop_alert" id="CPOAlert_Wrap02">
+							<div class="message"></div>
+							<div class="btn_area">
+								<ul>
+									<li><button type="button" class="btn_alert02">취소</button></li>
+									<li><button type="button" class="btn_alert01">확인</button></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>
+
+			<script>
+				$(document).ready(function(){
+					$('#alertPopup01').on('click',function(){
+						CPO.POPUP_open("CPOAlert_Wrap", "<p class='txt01'>입고알림은 최대 10개까지 등록 가능하며 이미 10개의 알림을 등록하셨습니다.</p>");
+					});
+					$('#alertPopup02').on('click',function(){
+						CPO.POPUP_open("CPOAlert_Wrap02", "<p class='txt01'>입고알림은 최대 10개까지 등록 가능하며 이미 10개의 알림을 등록하셨습니다.</p>");
+					});
+					$('#toastPopup').on('click',function(){
+						CPO.POPUP_toast("CPOToast_Wrap", "차량이 장바구니에 담겼습니다.");
+					});
+					$('.btn_big02').on('click',function(){
+						CPO.POPUP_open($(this));
+					})
+				});
+			</script>
+
+			<!-- <h3></h3>
+			<div id="" class="component">
+				<h4>소제목 or 소제목: 사용예시</h4>
+				<ol class="pre">
+					<li><pre class="brush: html;"></pre></li>
+					<li></li>
+				</ol>
+				<ol class="design">
+					<li></li>
+					<li></li>
+				</ol>
+				or
+				<div class="pre">
+					<pre class="brush: html;"></pre>
+				</div>
+				<div class="design">
+				</div>
+			</div> -->
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

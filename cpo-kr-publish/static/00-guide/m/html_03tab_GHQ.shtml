@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="guide_inc/guide_top_GHQ.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left 
+		<div id="sideMenu">
+		</div>
+	left -->
+		<!-- contents -->
+		<div id="contents" class="full">
+			<ul class="sorting">
+				<li><a href="html_03tab.shtml?depth=6&depthSub=2">HMC 보기</a></li>
+				<li><a href="html_03tab_GHQ.shtml?depth=6&depthSub=2">GHQ 보기</a></li>
+			</ul>
+			<h3>Tab</h3>
+			<div id="uio_item1_1" class="component">
+				<ol class="pre">
+					<li>
+						<h5>기본 탭</h5>
+						<pre class="brush: html;">
+							<div class="tab">
+								<ul class="tab_list">
+									<li class="on"><a href="javascript:void(0)">탭1</a></li>
+									<li><a href="javascript:void(0)">탭2</a></li>
+								</ul>
+								<div class="tab_cont">
+									<div class="tab_item on">
+										탭1내용
+									</div>
+									<div class="tab_item">
+										탭2내용
+									</div>
+								</div>
+							</div>
+							
+							<script>
+								CPO.tab();
+							</script>
+						</pre>
+					</li>
+					<li>
+						<h5>x-scroll</h5>
+						<pre class="brush: html;">
+							<div class="tab">
+								<ul class="tab_list x-scroll">
+									<li class="on"><a href="javascript:void(0)">전체</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+									<li><a href="javascript:void(0)">앱 오류문의</a></li>
+									<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+									<li><a href="javascript:void(0)">앱 오류문의</a></li>
+									<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+									<li><a href="javascript:void(0)">앱 오류문의</a></li>
+									<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+									<li><a href="javascript:void(0)">내차사기</a></li>
+									<li><a href="javascript:void(0)">내차팔기</a></li>
+								</ul>
+							</div>
+						</pre>
+					</li>
+				</ol>
+				
+				<ol class="design">
+					<li>
+						<h5>기본 탭</h5>
+						<div class="tab">
+							<ul class="tab_list">
+								<li class="on"><a href="javascript:void(0)">탭1</a></li>
+								<li><a href="javascript:void(0)">탭2</a></li>
+							</ul>
+							<div class="tab_cont">
+								<div class="tab_item on">
+									탭1내용
+								</div>
+								<div class="tab_item">
+									탭2내용
+								</div>
+							</div>
+						</div>
+						
+						<script>
+							CPO.tab();
+						</script>
+					</li>
+					<li>
+						<h5>x-scroll</h5>
+						<div class="tab">
+							<ul class="tab_list x-scroll">
+								<li class="on"><a href="javascript:void(0)">전체</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+								<li><a href="javascript:void(0)">앱 오류문의</a></li>
+								<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+								<li><a href="javascript:void(0)">앱 오류문의</a></li>
+								<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+								<li><a href="javascript:void(0)">앱 오류문의</a></li>
+								<li><a href="javascript:void(0)">회원 & 멤버스</a></li>
+								<li><a href="javascript:void(0)">내차사기</a></li>
+								<li><a href="javascript:void(0)">내차팔기</a></li>
+							</ul>
+						</div>
+					</li>
+				</ol>
+			</div>
+			
+			<h3>Toggle</h3>
+			<div id="uio_item1_1" class="component">
+				<h5>tit_btn 의 $(this).parent()에 on</h5>
+				<div class="pre">
+					<pre class="brush: html;">
+						<ul class="toggle">
+							<li class="">
+								<button class="btn_tit">
+									<span>내차사기</span>
+									배송은 언제 받을 수 있나요?
+								</button>
+								<div class="cont">
+									아이디 찾기 또는 비밀번호 찾기 진행을 부탁드려요.<br>
+									회원 가입하신 사실을 잊으셨거나 제휴 사이트를 통해 가입된 경우가 많습니다.<br><br>
+			
+									<a href="#none" class="btn_txt_mid02">아이디 찾기 또는 비밀번호 찾기</a>를 진행해주세요.
+								</div>
+							</li>
+							<li>
+								<button class="btn_tit">
+									<span>내차사기</span>
+									배송은 언제 받을 수 있나요?
+								</button>
+								<div class="cont">
+									아이디 찾기 또는 비밀번호 찾기 진행을 부탁드려요.<br>
+									회원 가입하신 사실을 잊으셨거나 제휴 사이트를 통해 가입된 경우가 많습니다.
+								</div>
+							</li>
+						</ul>
+						<script>
+							CPO.toggle();
+						</script>
+					</pre>
+				</div>
+				<div class="design">
+					<div class="faq_wrap">
+						<ul class="toggle">
+							<li>
+								<button class="tit_btn">
+									<span>내차사기</span>
+									배송은 언제 받을 수 있나요?
+								</button>
+								<div class="cont">
+									아이디 찾기 또는 비밀번호 찾기 진행을 부탁드려요.<br>
+									회원 가입하신 사실을 잊으셨거나 제휴 사이트를 통해 가입된 경우가 많습니다.<br><br>
+			
+									<a href="#none" class="btn_txt_mid02">아이디 찾기 또는 비밀번호 찾기</a>를 진행해주세요.
+								</div>
+							</li>
+							<li>
+								<button class="tit_btn">
+									<span>내차사기</span>
+									배송은 언제 받을 수 있나요?
+								</button>
+								<div class="cont">
+									아이디 찾기 또는 비밀번호 찾기 진행을 부탁드려요.<br>
+									회원 가입하신 사실을 잊으셨거나 제휴 사이트를 통해 가입된 경우가 많습니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+					<link rel="stylesheet" type="text/css" href="../HMC/m/css/h_cscenter.css" />
+					<script>
+						CPO.toggle();
+					</script>
+				</div>
+			</div>
+
+			<h3>Accordion</h3>
+			<div id="uio_item1_1" class="component">
+				<!-- 아코디언 sample -->
+				<div class="accordion sample">
+					<ul>
+						<li>
+							<a href="#">아코디언 샘플01</a>
+							<ul>
+								<li>
+									<a href="#">아코디언 샘플01_01</a>
+									<ul>
+										<li><a href="#">아코디언 샘플01_01_01</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">아코디언 샘플02</a>
+							<ul>
+								<li>
+									<a href="#">아코디언 샘플02_01</a>
+									<ul>
+										<li><a href="#">아코디언 샘플02_01_01</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">아코디언 샘플02_02</a>
+									<ul>
+										<li><a href="#">아코디언 샘플02_02_01</a></li>
+										<li><a href="#">아코디언 샘플02_02_02</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">아코디언 샘플03</a>
+							<ul>
+								<li>
+									<a href="#">아코디언 샘플03_01</a>
+									<ul>
+										<li><a href="#">아코디언 샘플03_01_01</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">아코디언 샘플03_02</a>
+									<ul>
+										<li><a href="#">아코디언 샘플03_02_01</a></li>
+										<li><a href="#">아코디언 샘플03_02_02</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">아코디언 샘플03_03</a>
+									<ul>
+										<li><a href="#">아코디언 샘플03_03_01</a></li>
+										<li><a href="#">아코디언 샘플03_03_02</a></li>
+										<li><a href="#">아코디언 샘플03_03_03</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<script>
+					// CPO.accordion();
+				</script>
+				<!-- 아코디언 sample -->
+			</div>
+				
+			<!-- <h3></h3>
+			<div id="" class="component">
+				<h4>소제목 or 소제목: 사용예시</h4>
+				<ol class="pre">
+					<li><pre class="brush: html;"></pre></li>
+					<li></li>
+				</ol>
+				<ol class="design">
+					<li></li>
+					<li></li>
+				</ol>
+				or
+				<div class="pre">
+					<pre class="brush: html;"></pre>
+				</div>
+				<div class="design">
+				</div>
+			</div> -->
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

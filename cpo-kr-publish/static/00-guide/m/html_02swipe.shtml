@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">이미지 lazyload 가이드</button>
+					<ul class="sub">
+						<li><button id="item1_1">이미지 lazyload 가이드</button></li>
+					</ul>
+				</li>
+				<li><button id="item2">swiper 가이드</button>
+					<ul class="sub">
+						<li><button id="item2_1">페이지모드 SWIPER</li>
+						<li><button id="item2_2">프리모드 SWIPER</li>
+						<li><button id="item2_3">리뷰 SWIPER</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+		<!-- contents -->
+		<div id="contents">
+			<h3>이미지 Lazyload</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>이미지 lazyload</h4><a href="/HMC/m/SHTML/H_order/FO-OR-MS0001.shtml" class="link_sample">샘플보기</a>
+				<ol>
+					<li>
+						<pre class="brush: html;">
+							<!-- 이미지 경로를 data-src에 넣고 세로 스크롤일 때는 cpo_lazy_v -->
+							<img data-src="/HMC/m/img/@thumb/plp_310x310_01.jpg" class="cpo_lazy_v" alt="" />
+
+							<!-- 이미지 경로를 data-src에 넣고 가로 스크롤일 때는 cpo_lazy_h -->
+							<img data-src="/HMC/m/img/@thumb/plp_310x310_01.jpg" class="cpo_lazy_h" alt="" />
+
+							<script>
+								CPOLazyload('[class^="cpo_lazy_"]');
+							</script>
+						</pre>
+					</li>
+				</ol>
+			</div>
+
+			<h3>Swiper</h3>
+			<div id="uio_item2_1" class="component">
+				<h4>페이지모드 SWIPER</h4><a href="/HMC/m/SHTML/@layout/CPO_swiper.shtml" class="link_sample">샘플보기</a>
+				<ol>
+					<li>
+						<pre class="brush: html;">
+							<div class="swiperType01" data-swiper-space="15"> <!--data-swiper-space 간격-->
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+									<li class="swiper-slide">     
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+									<li class="swiper-slide">
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+								</ul>
+								<div class="swiper-pagination"></div>
+							</div>
+							<!-- 
+								//swiperType01 옵션값
+								new Swiper(d, {
+									slidesPerView:'auto',
+									spaceBetween:$spaceBetween,
+									freeMode:false,
+									pagination:{
+										el: $pagination
+									}
+								});
+							-->
+						</pre>
+					</li>
+				</ol>
+			</div>
+
+			<div id="uio_item2_2" class="component">
+				<h4>프리모드 SWIPER</h4><a href="/HMC/m/SHTML/@layout/CPO_swiper.shtml" class="link_sample">샘플보기</a>
+				<ol>
+					<li>
+						<pre class="brush: html;">
+							<div class="swiperType02" data-swiper-space="15">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+									<li class="swiper-slide">     
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+									<li class="swiper-slide">
+										<img src="/HMC/m/img//@thumb/my_slide.png" alt="" />
+									</li>
+								</ul>
+							</div>
+							<!-- 
+								//swiperType02 옵션값
+								new Swiper(d, {
+									slidesPerView:'auto',
+									spaceBetween:$spaceBetween,
+									freeMode:true
+								});
+							-->
+						</pre>
+					</li>
+				</ol>
+			</div>
+
+			<div id="uio_item2_3" class="component">
+				<h4>리뷰 SWIPER</h4><a href="/HMC/m/SHTML/@layout/CPO_swiper.shtml" class="link_sample">샘플보기</a>
+				<ol>
+					<li>
+						<pre class="brush: html;">
+							<div class="review_list01 swiperType01"> <!--리뷰 일 시 review_list01 class 추가-->
+								<ol class="swiper-wrapper">
+									<li class="swiper-slide">
+										<button type="button" class="review_box">
+											<span class="review_top">
+												<span class="name">Ee*******</span>
+												<span class="date">21.04.05</span>
+											</span>
+											<span class="review_star">
+												<span class="item">
+													<span class="star_txt">차량품질</span>
+													<!-- em안에 점수넣어주시면 넓이 계산하게 해놨습니다. -->
+													<div class="rating02"><span class="star"><em>4</em>점</span></div>
+												</span>
+												<span class="line"></span>
+												<span class="item">
+													<span class="star_txt">차량가격</span>
+													<!-- em안에 점수넣어주시면 넓이 계산하게 해놨습니다. -->
+													<div class="rating02"><span class="star"><em>2</em>점</span></div>
+												</span>
+												<span class="line"></span>
+												<span class="item">
+													<span class="star_txt">구매서비스</span>
+													<!-- em안에 점수넣어주시면 넓이 계산하게 해놨습니다. -->
+													<div class="rating02"><span class="star"><em>2</em>점</span></div>
+												</span>
+											</span>
+											<span class="review_bot">
+												<span class="txt">전체적으로 모두 좋은 상태를 보여주고 있습니다. 신차 수준에 가까운 상태로 추천드리는 차량입니다. 전체적으로 모두 좋은 상태를 보여주고 있습니다. </span>
+												<span class="vid" > <!--video 등록되어있을 경우 class vid 추가-->
+													<img src="/HMC/m/img/@thumb/car_slide.png" alt=""/>
+													<span>5</span>
+												</span>
+											</span>
+											<span class="tit">더 뉴 그랜저 디젤 3.0 캘리그라피 </span>
+										</button>
+									</li>
+								</ol>
+								<div class="swiper-pagination"></div>
+							</div>
+						</pre>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>

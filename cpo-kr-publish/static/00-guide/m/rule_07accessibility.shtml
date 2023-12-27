@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+	<link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+  
+  .tbl03 table td.bg01{background:#e9f0e5}
+  .tbl03 table td.bg02{background:#f9f3df}
+  .tbl03 table td.bg03{background:#f7ece4}
+  .btn_modal_pop{display:block;width: 100%;background: transparent;border: 0; position:relative;color:#333;}
+  .btn_modal_pop::after{display: block;content:'';width:27px;height:1px;background:#333;margin:0 auto;}
+  .btn_modal_pop:active{font-weight: bold;;}
+  .tbl03 table td.bg02 .btn_modal_pop::after{width:35px;}
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+	.scroll_hidden{
+		overflow:hidden;
+	}
+	.ly_close{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	.CPOlayer{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: 100;
+	}
+	.CPOlayer.active{
+		display: block;
+	}
+	
+	.CPOlayer_wrap{
+		position: relative;
+		align-items: center;
+    	justify-content: center;
+		flex-direction: column;
+		background-color: white;
+		border-radius: 10px;;
+	}
+	.ly_head{
+		width: 100%;
+	}
+	.ly_cont{
+		flex: 1 1 100%;
+		height:600px;
+		overflow-y: auto;
+	}
+
+	.CPOlayer.type_modal.active{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.CPOlayer.type_modal .CPOlayer_wrap{
+		min-width: 795px;
+		max-width: calc(100% - 40px);
+		max-height: calc(100% - 40px);
+	}
+	.CPOlayer.type_modal .CPOlayer_wrap .ly_cont{margin:60px auto 0;width:695px;}
+	.CPOlayer.type_modal .CPOlayer_wrap .ly_cont img{width:695px;}
+	.scrolltable{table-layout: fixed;}
+</style>
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">개요</button>
+					<ul class="sub">
+						<li><button id="item1_1">웹 콘텐츠 접근성 지침</button></li>
+					</ul>
+				</li>
+				<li><button id="item2">지침</button>
+					<ul class="sub">
+						<li><button id="item2_1">웹 접근성 지침 2.1</button></li>
+						<li><button id="item2_2">모바일 애플리케이션 접근성 지침</button></li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+		<!-- left -->
+		
+		<!-- contents -->
+		<div id="contents">
+			<h3>개요</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>웹 콘텐츠 접근성 지침</h4>
+				<dl class="index01">
+					<dt>인지성(Perceivable)</dt>
+					<dd>
+						정보와 사용자 인터페이스 요소는 그들이 인지할 수 있도록 사용자에게 표시될 수 있어야 한다.
+						<ol>
+							<li>모든 텍스트가 아닌 콘텐츠에 대체 텍스트를 사람들이 원하는 인쇄, 점자, 음성, 기호 또는 간단 언어 등과 같은 형태로 제공해야 한다.</li>
+							<li>시간을 바탕으로 한 미디어에 대한 대안을 제공해야 한다.</li>
+							<li>정보와 구조의 손실 없이 콘텐츠를 다른 방식(예를 들면 더욱 간단한 형태로)들로 표현할 수 있어야 한다.</li>
+							<li>사용자들이 보다 쉽게 보고 들을 수 있는 전경에서 배경을 분리한 콘텐츠를 만들어야 한다.</li>
+						</ol>
+					</dd>
+					<dt>운용성(Operable)</dt>
+					<dd>
+						사용자 인터페이스 요소와 탐색은 운용 가능해야 한다.
+						<ol>
+							<li>키보드로 모든 기능을 사용할 수 있도록 해야 한다.</li>
+							<li>읽기 및 콘텐츠를 사용하는 사용자에게 충분한 시간을 제공해야 한다.</li>
+							<li>알려진 방법으로 발작을 일으킬 수 있는 콘텐츠를 디자인하지 않아야 한다.</li>
+							<li>사용자가 탐색하고, 콘텐츠를 찾고 그들이 어디에 위치하고 있는지를 알 수 있도록 도와주는 방법을 제공해야 한다.</li>
+						</ol>
+					</dd>
+					<dt>이해성(Understandable)</dt>
+					<dd>
+						정보와 사용자 인터페이스 운용은 이해할 수 있어야 한다.
+						<ol>
+							<li>텍스트 콘텐츠를 판독하고 이해할 수 있도록 만들어야 한다.</li>
+							<li>웹 페이지의 탑재와 운용을 예측 가능한 방법으로 제작해야 한다.</li>
+							<li>사용자의 실수를 방지하고 수정할 수 있도록 도와야 한다.</li>
+						</ol>
+					</dd>
+					<dt>내구성(Robust)</dt>
+					<dd>
+						콘텐츠는 보조 기술을 포함한 넓고 다양한 사용자 에이전트에 의존하여 해석될 수 있도록 충분히 내구성을 가져야 한다.
+						<ol>
+							<li>보조 기술을 포함한 현재 및 미래의 사용자 에이전트의 호환성을 극대화해야 한다.</li>
+						</ol>
+					</dd>
+				</dl>
+			</div>
+			
+		
+
+			<div id="uio_item2_1" class="component">
+				<h4>웹 접근성 지침 2.1 항목 <span class="txt">P-기획, D-디자인, P-퍼블리싱, D-개발 작업 표기</span></h4>
+				<p class="txt01">
+					참고 : 
+					<span class="infosite mg2"><a href="https://www.wah.or.kr:444/Participation/online-wah.asp" target="_blank">접근성 평가 도구</a></span>
+					<span class="infosite mg2"><a href="/00-guide/file/한국형웹콘텐츠접근성지침2.1.pdf" target="_blank">한국형웹콘텐츠접근성지침2.1</a></span>
+
+					<br />한국웹접근성인증평가원 심사기준 참고
+					<span class="infosite mg2"><a href="http://www.wa.or.kr/m1/sub3.asp" target="_blank">PC 심사기준</a></span>
+					<span class="infosite mg2"><a href="http://www.wa.or.kr/m3/sub3.asp" target="_blank">모바일 심사기준</a></span>
+			
+
+				</p>
+				<div class="tbl03">
+					<table summary="웹 접근성 지침 2.1 항목" class="scrolltable">
+					<colgroup>
+						<col style="width:140px;" />
+						<col style="width:190px;" />
+						<col style="width:auto;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+					</colgroup>
+					<thead>
+						<tr class="center">
+							<th scope="col">지침</th>
+							<th scope="col">검사항목</th>
+							<th scope="col">내용</th>
+							<th scope="col">P</th>
+							<th scope="col">D</th>
+							<th scope="col">P</th>
+							<th scope="col">D</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>대체 텍스트 부분</th>
+							<td>1. 적절한 대체 텍스트 제공</td>
+							<td>텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_01" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<th>멀티미디어 대체 수단 부분</th>
+							<td>2. 자막 제공</td>
+							<td>멀티미디어 콘텐츠에는 자막, 대본 또는 수화를 제공해야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_02" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<th rowspan="5">명료성 부분</th>
+							<td>3. 색에 무관한 콘텐츠 인식</td>
+							<td>콘텐츠는 색에 관계없이 인식될 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center bg02"><button class="btn_modal_pop" data-ref="Modal_03" type="button">디자인</button></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>4. 명확한 지시 사항 제공</td>
+							<td>지시 사항은 모양, 크기, 위치, 방향, 색, 소리 등에 관계없이 인식될 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center bg02"><button class="btn_modal_pop" data-ref="Modal_04" type="button">디자인</button></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>5. 텍스트 콘텐츠의 명도 대비 </td>
+							<td>텍스트 콘텐츠와 배경 간의 명도 대비는 4.5 대 1 이상이어야 한다.</td>
+							<td class="center"></td>
+							<td class="center bg02"><button class="btn_modal_pop" data-ref="Modal_05" type="button">디자인</button></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>6. 자동 재생 금지</td>
+							<td>자동으로 소리가 재생되지 않아야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_06" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>7. 콘텐츠 간의 구분</td>
+							<td>이웃한 콘텐츠는 구별될 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center bg02">디자인</td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<th rowspan="3">입력장치 접근성</th>
+							<td>8. 키보드 사용 보장</td>
+							<td>모든 기능은 키보드만으로도 사용할 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_08" type="button">퍼블</button></td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>9. 초점 이동</td>
+							<td>키보드에 의한 초점은 논리적으로 이동해야 하며 시각적으로 구별할 수 있어야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_09" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>10. 조작 가능</td>
+							<td>사용자 입력 및 컨트롤은 조작 가능하도록 제공되어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03">퍼블</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<th rowspan="3">충분한 시간 제공</th>
+							<td>11. 응답시간 조절</td>
+							<td>시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_11" type="button">기획</button></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>12. 정지 기능 제공</td>
+							<td>자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_12" type="button">기획</button></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>13. 깜빡임과 번쩍임 사용 제한</td>
+							<td>초당 3~50 회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_13" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<th rowspan="3">쉬운 내비게이션</th>
+							<td>14. 반복 영역 건너뛰기</td>
+							<td>콘텐츠의 반복되는 영역은 건너뛸 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_14" type="button">퍼블</button></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>15. 제목 제공</td>
+							<td>페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_15" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>16. 적절한 링크 텍스트</td>
+							<td>링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_16" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<th>가독성</th>
+							<td>17. 기본 언어 표시</td>
+							<td>주로 사용하는 언어를 명시해야 한다. </td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_17" type="button">퍼블</button></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<th>예측 가능성</th>
+							<td>18. 사용자 요구에 따른 실행</td>
+							<td>사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_18" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<th rowspan="2">콘텐츠의 논리성</th>
+							<td>19.  콘텐츠의 선형 구조</td>
+							<td>콘텐츠는 논리적인 순서로 제공해야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_19" type="button">퍼블</button></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>20. 표의 구성</td>
+							<td>표는 이해하기 쉽게 구성해야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_20" type="button">퍼블</button></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<th rowspan="2">입력의 도움</th>
+							<td>21. 레이블 제공</td>
+							<td>사용자 입력에는 대응하는 레이블을 제공해야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_21" type="button">퍼블</button></td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>22. 오류 정정</td>
+							<td>입력 오류를 정정할 수 있는 방법을 제공해야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_22" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<th rowspan="2">문법 준수</th>
+							<td>23. 마크업 오류 방지</td>
+							<td>마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center bg03"><button class="btn_modal_pop" data-ref="Modal_23" type="button">퍼블</button></td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>24. 웹 애플리케이션 접근성 준수</td>
+							<td>콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다.</td>
+							<td class="center bg01"><button class="btn_modal_pop" data-ref="Modal_24" type="button">기획</button></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="uio_item2_2" class="component">
+				<h4>모바일 애플리케이션 접근성 지침 항목 <span class="txt">P-기획, D-디자인, P-퍼블리싱, D-개발 작업 표기</span></h4>
+				
+				<p class="txt01">
+					<span class="infosite mg2">참고 : 
+						<a href="/00-guide/file/모바일 애플리케이션 접근성 지침(미래창조과학부고시제2013-107호).pdf" target="_blank">모바일 애플리케이션 접근성 지침</a>
+					</span>
+				</p>
+				<div class="tbl03">
+					<table summary="모바일 애플리케이션 접근성 지침 항목" class="scrolltable">
+					<colgroup>
+						<col style="width:190px;" />
+						<col style="width:auto;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+						<col style="width:80px;" />
+					</colgroup>
+					<thead>
+						<tr class="center">
+							<th scope="col">검사항목</th>
+							<th scope="col">내용</th>
+							<th scope="col">P</th>
+							<th scope="col">D</th>
+							<th scope="col">P</th>
+							<th scope="col">D</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1. 적절한 대체 텍스트 제공</td>
+							<td>텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>2. 초점</td>
+							<td>키보드에 의한 초점은 논리적으로 이동해야 하며 시각적으로 구별할 수 있어야 한다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr class="strong">
+							<td>3. 운영체제 접근성 기능 지원</td>
+							<td>운영체제가 제공하는 접근성 기능 및 속성이 사용되어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>4. 누르기 동작지원</td>
+							<td>터치 기반 모바일 기기의 모든 컨트롤은 누르기 동작(touch or tab)으로 제어할 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>5. 색에 무관한 콘텐츠 인식</td>
+							<td>콘텐츠는 색에 관계없이 인식될 수 있어야 한다.</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>6. 명도 대비 </td>
+							<td>
+								화면에 표시되는 모든 정보는 전경색과 배경색이 구분 될 수 있도록 최소 대비 이상으로 제공되어야 한다.<br>
+								화면상의 모든 정보의 최소 대비는 3:1 이상이어야 한다.<br>
+								저시력인, 고령자 등에게 실효성을 가지기 위해서는 명도 대비가 4.5:1 이상이 되는 것이 바람직하다.<br> 
+								단, 사진과 동영상은 예외
+							</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>7. 자막, 수화 등의 제공</td>
+							<td>멀티미디어 콘텐츠에는 동등한 내용의 자막, 원고 또는 수화가 제공되어야 한다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+						</tr>
+						<tr class="strong">
+							<td>8. 기본 사용자 인터페이스 컴포넌트</td>
+							<td>
+								운영체제에서 제공하는 기본 사용자 인터페이스 컴포넌트(Native UI Component)를 최대한 이용하는 것이 바람직하다.<br>
+								운영체제에서 제공하는 접근성 있는 기본 사용자 인터페이스 컴포넌트는 사용자 인터페이스 구성에 사용되는 표준 도구(대화상자, 버튼과 체크
+								박스, 타이틀 바 등)들을 말한다
+							</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+						</tr>
+						<tr>
+							<td>9. 컨트롤간 충분한 간격</td>
+							<td>컨트롤은 충분한 간격으로 배치하는 것이 바람직하다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr class="strong">
+							<td>10. 알림 기능</td>
+							<td>
+								사용자에게 알림을 제공할 때에는 진동, 시각, 소리 등 최대한 다양한 방법으로 사용자가 선택할 수 있도록 제공하는 것이 바람직하다
+							</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+						</tr>
+						<tr class="strong">
+							<td>11. 범용 폰트 이용</td>
+							<td>
+								폰트의 크기 조절, 확대 기능을 제공하거나 운영체제에서 제공하는 관련 기능을 활용할 수 있는 방법을 제공하는 것이 바람직하다.
+							</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>12. 사용자 인터페이스의 일관성</td>
+							<td>사용자 인터페이스 요소들의 배치를 일관성 있게 제공하는 것이 바람직하다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center">O</td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>13. 깜빡임과 번쩍임 사용 제한</td>
+							<td>초당 3~50 회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr>
+							<td>14. 배경음 사용 금지</td>
+							<td>자동으로 재생되는 배경음을 사용하지 않는 것이 바람직하다.</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center"></td>
+						</tr>
+						<tr class="strong">
+							<td>15. 장애인 등 사용자 평가</td>
+							<td>애플리케이션 개발 시 다양한 모바일 기기에서의 이용 가능 여부를 점검해야 하며, 장애인 사용자 평가를 수행하는 것이 바람직하다</td>
+							<td class="center">O</td>
+							<td class="center"></td>
+							<td class="center"></td>
+							<td class="center">O</td>
+						</tr>
+
+						
+					</tbody>
+					</table>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+
+
+
+
+
+
+
+<div class="CPOlayer type_modal" id="fullModalPopup" >
+	<div class="CPOlayer_wrap" >
+		<div class="ly_cont">
+			<!-- 01 -->
+			<div id="Modal_01" class="swiper mySwiper">
+					<ol class="swiper-wrapper">
+						<li class="swiper-slide"><img src="images/accessibility/01-01.jpg" alt="" /></li>
+						<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/01-02.jpg" alt="" /></li>
+						<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/01-03.jpg" alt="" /></li>
+						<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/01-04.jpg" alt="" /></li>
+						<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/01-00.jpg" alt="" /></li>
+					</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+				</div>
+			<!-- //01 -->
+			<!-- 02 -->
+			<div id="Modal_02" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/02-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/02-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/02-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/02-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/02-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //02 -->
+			<!-- 03 -->
+			<div id="Modal_03" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/03-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/03-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //03 -->
+			<!-- 04 -->
+			<div id="Modal_04" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/04-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-06.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-07.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/04-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //04 -->
+			<!-- 05 -->
+			<div id="Modal_05" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/05-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/05-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //05 -->
+			<!-- 06 -->
+			<div id="Modal_06" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/06-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/06-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/06-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/06-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/06-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //06 -->
+			<!-- 08 -->
+			<div id="Modal_08" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/08-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/08-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/08-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/08-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/08-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/08-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //08 -->
+			<!-- 09 -->
+			<div id="Modal_09" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/09-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/09-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/09-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/09-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/09-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/09-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //09 -->
+			<!-- 11 -->
+			<div id="Modal_11" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/11-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/11-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/11-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/11-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/11-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/11-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //11 -->
+			<!-- 12 -->
+			<div id="Modal_12" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/12-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/12-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/12-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/12-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/12-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //12 -->
+			<!-- 13 -->
+			<div id="Modal_13" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/13-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/13-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/13-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/13-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //13 -->
+			<!-- 14 -->
+			<div id="Modal_14" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/14-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/14-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/14-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/14-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/14-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/14-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //14 -->
+			<!-- 15 -->
+			<div id="Modal_15" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/15-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/15-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/15-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/15-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/15-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //15 -->
+			<!-- 16 -->
+			<div id="Modal_16" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/16-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/16-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/16-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/16-04.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //16 -->
+			<!-- 17 -->
+			<div id="Modal_17" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/17-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/17-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/17-03.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //17 -->
+			<!-- 18 -->
+			<div id="Modal_18" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/18-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-05.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-06.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-07.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-00.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/18-002.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //18 -->
+			<!-- 19 -->
+			<div id="Modal_19" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/19-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/19-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/19-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/19-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/19-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //19 -->
+			<!-- 20 -->
+			<div id="Modal_20" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/20-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/20-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/20-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //20 -->
+			<!-- 21 -->
+			<div id="Modal_21" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/21-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/21-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/21-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/21-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //21 -->
+			<!-- 22 -->
+			<div id="Modal_22" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/22-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/22-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/22-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/22-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/22-05.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //22 -->
+			<!-- 23 -->
+			<div id="Modal_23" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/23-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/23-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/23-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/23-04.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/23-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //23 -->
+			<!-- 24 -->
+			<div id="Modal_24" class="swiper mySwiper">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide"><img src="images/accessibility/24-01.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/24-02.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/24-03.jpg" alt="" /></li>
+					<li class="swiper-slide"><img class="swiper-lazy" data-src="images/accessibility/24-00.jpg" alt="" /></li>
+				</ol><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+			</div>
+			<!-- //24 -->
+		</div>
+		<div class="ly_close"><button type="button">닫기</button></div>
+	</div>
+</div>
+
+<!-- e : 레이어 템플릿 -->
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+	var swiper = new Swiper(".mySwiper", {
+	spaceBetween: 30,
+	lazy: true,
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	});
+	//모달 팝업
+	var testModalPop = null;
+	$(".btn_modal_pop").on("click",function(){
+		var defaultOption = {
+			close: () => console.log('close'),
+			confirm: (data) => console.log('confirm'),
+			data: {type: "default"}
+		}
+		var cHref = $(this).attr('data-ref');
+		$('.CPOlayer_wrap .ly_cont > div').hide();
+		var divID = $("#" +cHref);
+		divID.show();
+
+		console.log(cHref);
+		testModalPop = HMC.UI.LayerPopup($("#fullModalPopup"),defaultOption)
+	});
+
+	$("#fullModalPopup .ly_close button").on("click",function(){
+		testModalPop.close();
+	});
+	
+	$(document).keyup(function(e) {
+		if ( e.keyCode == 27) {
+			testModalPop.close();
+		}
+	});
+
+</script>
+</body>
+</html>

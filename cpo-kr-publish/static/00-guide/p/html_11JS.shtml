@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/p/guide_inc/guide_top.shtml"-->
+	<link rel="stylesheet" href="./css/guide_icon.css">
+</head>
+<style>
+	.component .txt02{margin:4px 0 0;color:#767676;font-size:16px;font-weight:400;line-height:24px;}
+</style>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/p/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">UI/UX JS 가이드</button>
+					<ul class="sub">
+						<li><button id="item1_1">서비스안내 (내차사기/팔기) 가이드</button></li>
+						<li><button id="item1_2">그래프모션 가이드</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+
+		<!-- contents -->
+		<div id="contents">
+			<h3>HMC ui/ux 가이드</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>서비스안내 (내차사기/팔기) 가이드</h4>
+                <ol class="pre">
+                    <li>
+                        <h5></h5>
+                        <pre class="brush: javascript;">
+                            /*[C] serviceMain함수의 호출은 각 서비스안내 페이지 하단에서 호출 parameter를 이용하여 내부 데이터를 분기 
+                            내차사기 const serviceScript = serviceMain('buy');
+                            내차팔기 const serviceScript = serviceMain('sale'); */
+
+                            //서비스안내 함수
+                            function serviceMain(pageType){
+                                //[C] 사용될 DOM에 대한 접근
+                                const container = document.querySelector('.container');
+                                const benefitSection = document.querySelector('.sec_sale_benenfit');
+                                // const tradeInSection = document.querySelector('.sec_sale_trande_in'); 트레이드인 살릴때 주석 풀기 CPO-13535
+                                const bottomBlock = document.querySelector('.bottom_block');
+                                const footer = document.querySelector('#CPOfooter'); 
+                                const scrollDownBtn = document.querySelector('.btn_scroll_down'); //[C] 초기진입화면 스크롤다운버튼
+                            
+                                const moveDelay = 700; // container css transition time [C] mouse wheel 사용 시 섹션 넘어가는 속도
+                                let pagePointArr = []; // [C]기본적으로 마크업된 섹션의 상단값
+                                let conditionArr = []; // [C] mouse wheel event일어날 때마다 참고해야하는 조건들
+                                let timer; //throttling timer
+                                let cnt = 0; //wheelcount [C]업일경우 카운트는 점점 줄어들고 휠이 다운일경우는 카운트 증가
+                                let active = true; //motion activating; [C]해당 섹션에 도착했을 때, 내부 트랜지션(css 스타일에서 정의된)이 일어나는 총 시간
+                                let resized; //window resized debouncer
+                                let limit = 0; //wheel action limit [C] 조건배열의 마지막에 도착할 경우 휠 이벤트 일어났을때 에러방지 
+                                let isDown = true;//wheel event direction [C] 휠 이벤트 방향 
+                                
+                            
+                                window.addEventListener('wheel', function(e){ //[C] 마우스 휠 이벤트
+                                    if(!timer && !active){ //throttling
+                                        timer = setTimeout(() => {
+                                            timer = null;
+                                            active = true;
+                                            
+                                            if(e.wheelDelta > 0){ //up
+                                                cnt ? cnt-- : cnt;
+                                                isDown = false;
+                                            }else{//down
+                                                cnt < limit ? cnt++ : cnt;
+                                                isDown = true;
+                                            }
+                                            _motionFn(); //동작함수 호출 
+                                        },200)
+                                    }
+                                })
+                            
+                                window.addEventListener('DOMContentLoaded', function(){ //[C] 처음 컨텐츠 로딩 시 초기화면 애니메이션 바로 구동
+                                    container.insertBefore(footer, null); //[C] 레이아웃 픽스구조로 인해 디자인 구현을 하기위해 푸터재배열 
+                                    //[C]초기 animation start 및 조건 설정 
+                                    setTimeout(() => {
+                                        _settingFn(pageType);
+                                        limit = conditionArr.length - 1;
+                                        _motionFn();
+                                    },1000);
+                                    
+                                })
+                            
+                                window.addEventListener('resize', function(e){
+                                    //[C]debouncing 
+                                    if(resized){
+                                        clearTimeout(resized);
+                                    }
+                                    resized = setTimeout(() => {
+                                        _settingFn(pageType);
+                                        _motionFn();
+                                        //[C]도큐먼트 위치 재조정필요현재 카운트
+                                    },200)
+                                })
+                            
+                                const _settingFn = (pageType) => {
+                                    //[C] 섹션이 추가되거나 변경될시 하기 배열의 순서변화가 일어나므로 conditionArr의 move를 밀리거나 변경되도록 수정해야함
+                                    pagePointArr = [...document.querySelectorAll('[data-id^=page]')].map(e => e.offsetTop);
+
+                                    //[C]나중에  트레이드인 다시 열어야할때 하기 splice 구문 삭제요망 CPO-13535
+                                    if(pageType === 'sale') pagePointArr.splice(3, 0, 0);
+
+                                    /*
+                                        컨텐츠 추가/삭제 되면 여기만 변경하면 됨 
+                                        [C] contents가 중간에 추가되거나 삭제 될 경우 해당 배열 순서에 해당하는 섹션의 정보를 삭제하거나 추가되거나
+                                        ex) 3번과 4번째 요소 사이에 추가될 경우 => {
+                                            timeDelay : [Number] 시간,
+                                            name : [String] 스타일시트에서 지정한 클래스명, 
+                                            move : 이동 여부에 따라 null또는 pagePointArr[다음것 인덱스]
+                                        }
+                                        중간에 컨텐츠가 추가되면, pagePointArr순서는 밀리게 되어서 이후는 순차적으로 수정이 필요함 
+                                        예를들면, 현재 SALE conditionArr의 경우, 6번째 요소가 pagePointArr[4]를 참조하게 되어있는데,
+                                        그 이전에 섹션이 하나 추가되면 하나씩 인덱스가 밀리게 되므로 index부분을 +1씩 변경해주어야함 
+                                        삭제시에는 빠지는 섹션의 인덱스 pagePoinArr의 갯수와 순서를 확인해서 인덱스 지정해주어야함
+                                    */
+                                    conditionArr = pageType === 'sale' ? [
+                                        {
+                                            timeDelay : 1000,
+                                            name : 'motion1',
+                                            move : null,
+                                        },
+                                        {
+                                            timeDelay : 2700,
+                                            name : 'motion2',
+                                            move : null,
+                                        },
+                                        {
+                                            timeDelay : 2900,
+                                            name : 'motion3',
+                                            move : pagePointArr[0],
+                                        },
+                                        {
+                                            timeDelay : 0,
+                                            name : null,
+                                            move : pagePointArr[1] - (container.clientHeight * 0.28),
+                                        },
+                                        {
+                                            timeDelay : 0,
+                                            name : null,
+                                            move : pagePointArr[2] - (container.clientHeight - benefitSection.clientHeight),
+                                        },
+                                        // {  트레이드인 살릴때 주석 풀기 CPO-13535
+                                        // 	timeDelay : 900,
+                                        // 	name : 'motion4',
+                                        // 	move : pagePointArr[3],
+                                        // },
+                                        // {
+                                        // 	timeDelay : 500,
+                                        // 	name : 'motion5',
+                                        // 	move : pagePointArr[3] - (container.clientHeight - tradeInSection.clientHeight),
+                                        // },
+                                        {
+                                            timeDelay : 0,
+                                            name : null,
+                                            move : pagePointArr[4],
+                                        },
+                                        
+                                        {
+                                            timeDelay : 600,
+                                            name : 'motion11',
+                                            move : pagePointArr[5],
+                                        },
+                                        
+                                        
+                                        {
+                                            timeDelay : 0,
+                                            name : 'motion12',
+                                            move : pagePointArr[6] + footer.clientHeight - (container.clientHeight - bottomBlock.clientHeight),
+                                        },
+                                    ] : [
+                                            {
+                                                timeDelay : 400,
+                                                name : 'motion1',
+                                                move : pagePointArr[0],
+                                            },
+                                            {
+                                                timeDelay : 2400,
+                                                name : 'motion2',
+                                                move : pagePointArr[1],
+                                            },
+                                            {
+                                                timeDelay : 3100,
+                                                name : 'motion3',
+                                                move :  pagePointArr[2],
+                                            },
+                                            {
+                                                timeDelay : 0,
+                                                name : null,
+                                                move : pagePointArr[3] - (container.clientHeight * 0.28),
+                                            },
+                                            {
+                                                timeDelay : 0,
+                                                name : null,
+                                                move : pagePointArr[4] - (container.clientHeight - benefitSection.clientHeight),
+                                            },
+                                            {
+                                                timeDelay : 800,
+                                                name : 'motion6',
+                                                move : pagePointArr[5],
+                                            },
+                                            {
+                                                timeDelay : 800,
+                                                name : 'motion7',
+                                                move : null,
+                                            },
+                                            {
+                                                timeDelay : 800,
+                                                name : 'motion8',
+                                                move : null,
+                                            },
+                                            {
+                                                timeDelay : 800,
+                                                name : 'motion9',
+                                                move : pagePointArr[5],
+                                            },
+                                            
+                                            // 오프라인 전시장 살리게 될경우
+                                            // {
+                                            // 	timeDelay : 800,
+                                            // 	name : 'motion9',
+                                            // 	move : null,
+                                            // },
+                                            
+                                            // {
+                                            // 	timeDelay : 800,
+                                            // 	name : 'motion10',
+                                            // 	move : pagePointArr[5],
+                                            // },
+                                            
+                                            {
+                                                timeDelay : 800,
+                                                name : 'motion11',
+                                                move : pagePointArr[6],
+                                            },
+                                                            
+                                            {
+                                                timeDelay : 0,
+                                                name : 'motion12',
+                                                move : pagePointArr[7] + footer.clientHeight - (container.clientHeight - bottomBlock.clientHeight),
+                                            },
+                                        ]
+                                        
+                                }
+                            
+                                const _motionFn = () => { // motion
+                                    const {timeDelay, move, name } = conditionArr[cnt]; //timeDelay : 애니메이션시간, move : 이동여부, name :클래스여부,
+                                    const _time = move ? timeDelay + moveDelay : timeDelay;
+                                    const _name = isDown ? name : conditionArr[cnt + 1].name;
+                                    if(move !== null){
+                                        container.style.transform = `translate(0, -${move}px)`;
+                                    }
+                                    if(move > 0){
+                                        setTimeout(() => {
+                                            if(_name){
+                                                classToggle();
+                                            }
+                                        }, moveDelay) 
+                                    }else{
+                                        classToggle();
+                                    }
+                            
+                                    function classToggle(){
+                                        isDown ? container.classList.add(_name) : container.classList.remove(_name);
+                                        //[C] video Play
+                                        const isVideoSection = container.classList.item(cnt + 1) === 'motion3';
+                                        if(!isVideoSection) return;
+                                        const carVideo = document.querySelector('.sec_sense_car video');
+                                        const graphVideo = document.querySelector('.car_estimate_video video');
+                                        const video = carVideo || graphVideo;
+                                        const videoStart = video == carVideo ? 500 : 1000;
+                                        setTimeout(()=> {
+                                            video.play();
+                                        }, videoStart)
+                                    }
+                                    
+                            
+                                    if(_time){
+                                        setTimeout((e) => {
+                                            active = false;
+                                        },_time)
+                                    }
+                                }
+                                
+                                //scrollDownBtnEvent
+                                if(scrollDownBtn){
+                                    scrollDownBtn.addEventListener('click', function(){
+                                        cnt++;
+                                        isDown = true;
+                                        _motionFn();
+                                    })
+                                }
+                            
+                            }
+                        </pre>
+                    </li>
+                </ol>
+			</div>			
+			<div id="uio_item1_2" class="component">
+				<h4>graph motion</h4>
+				<ol class="pre">
+					<li>
+						<h5>Type1</h5>
+						<pre class="brush: javascript;">
+                            //[C] 해당 스크립트는 마크업과 스타일 , 스크립트가 모바일과 동일함 
+							/* graph interaction */
+const graphBarMotion = (target) => { 
+	const _target = document.querySelector(target);
+	const _topPoint = _target.getBoundingClientRect().top + window.scrollY;
+	const _list = _target.querySelectorAll('ol .bar em');
+
+	//reset
+	[..._list].filter(e => e.innerText !== '0').forEach(e => e.style.width = "100%");
+
+	let _active;
+	let _timer;
+
+	function drawWidth(){
+		_list.forEach(e => {
+			e.style.width = e.innerText;
+		})
+	}
+
+	window.addEventListener('scroll', () => {
+		if(!_timer && !_active){
+			_timer = setTimeout(() =>{
+				_timer = null;
+				if(window.scrollY + (window.innerHeight / 2)  > _topPoint){
+					_active = true;
+					drawWidth();
+				}
+			}, 200)
+		}
+
+	})
+
+	window.addEventListener('load', () => {
+		if(window.scrollY + (window.innerHeight / 3)  > _topPoint) drawWidth();
+	})
+}
+						</pre>
+					</li>
+					
+				</ol>
+			</div>
+		
+	<!-- //container -->
+	<!--#include file="/00-guide/p/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+<!-- <script>
+// 퍼블 UI 확인용
+function pubCompare() {
+	$('.compare_car').on('click', 'label', function() {
+		if($(this).siblings('input').is(':checked')) {
+			$(this).addClass("on");
+		} else {
+			$(this).removeClass("on")
+		}		
+	});
+};
+
+$(document).ready(function() {
+	pubCompare();
+	CPOCompareCheck();
+
+	// 초기날짜셋팅
+	$('#datepic02').datepicker( "setDate", new Date());
+	$('#startDate').datepicker('setDate', new Date(new Date().setMonth(new Date().getMonth()-3)));
+	$('#endDate').datepicker('setDate', new Date());
+});
+	
+</script>
+
+<script>
+$(function(){
+	
+	$(".jQ_Select").on("click",function(){//셀렉트박스 레이어 스크립트
+		CPO.POPUP_open($(this));// 레이어팝업 open
+		CPO_SelectLayer($(this));// 레이어팝업에 data 값 넘기기
+	});
+	$(".jQ_Select_Save").on("click",function(){//셀렉트박스 레이어 스크립트
+		CPO.POPUP_close($(this));// 레이어팝업 close
+		CPO_SelectSave($(this));// 레이어팝업에 data 값 넘기기
+	});
+});
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+@import '../../../GHQ/p/scss/_common/g_function';
+@import '../../../GHQ/p/scss/_common/g_mixins';
+.nodata{
+	// padding: 0;
+	.car{
+		@include Mix_Info_Icon_01(0 0);
+	}
+	.bell{
+		@include Mix_Info_Icon_01(-60px 0);
+	}
+	.qna{
+		@include Mix_Info_Icon_01(-120px 0);
+	}
+	.review{
+		@include Mix_Info_Icon_01(-180px 0);
+	}
+	.promotion{
+		@include Mix_Info_Icon_01(-240px 0);
+	}
+	.point{
+		@include Mix_Info_Icon_01(-300px 0);
+	}
+	.payment{
+		@include Mix_Info_Icon_01(-360px 0);
+	}
+	.addcar{
+		@include Mix_Info_Icon_01(-420px 0);
+	}
+}
+
+
+ //icon_info03 size : 36px
+ .info{
+	&_cs03{
+		@include Mix_Info_Icon_03(0 0);
+	}
+	&_contactus03{
+		@include Mix_Info_Icon_03(-36px 0);
+	}
+	&_notice03{
+		@include Mix_Info_Icon_03(-72px 0);
+	}
+	&_chatbot03{
+		@include Mix_Info_Icon_03(-108px 0);
+	}
+	&_purchase03{
+		@include Mix_Info_Icon_03(-144px 0);
+	}
+	&_phone03{
+		@include Mix_Info_Icon_03(-180px 0);
+	}
+	&_notice_car03{
+		@include Mix_Info_Icon_03(-216px 0);
+	}
+	&_cuv_service03{
+		@include Mix_Info_Icon_03(-252px 0);
+	}
+	&_check_car03{
+		@include Mix_Info_Icon_03(-288px 0);
+	}
+	&_as_info03{
+		@include Mix_Info_Icon_03(-324px 0);
+	}
+
+	// line2
+	&_notificat_ion03{
+		@include Mix_Info_Icon_03(-0px -36px);
+	}
+	&_certificate03{
+		@include Mix_Info_Icon_03(-36px -36px);
+	}
+	&_phone03{
+		@include Mix_Info_Icon_03(-72px -36px);
+	}
+	&_receipt03{
+		@include Mix_Info_Icon_03(-108px -36px);
+	}
+	&_record03{
+		@include Mix_Info_Icon_03(-144px -36px);
+	}
+	&_document03{
+		@include Mix_Info_Icon_03(-180px -36px);
+	}
+	&_graph_l03{
+		@include Mix_Info_Icon_03(-216px -36px);
+	}
+	&_graph_r03{
+		@include Mix_Info_Icon_03(-252px -36px);
+	}
+	&_graph_s03{
+		@include Mix_Info_Icon_03(-288px -36px);
+	}
+	&_app03{
+		@include Mix_Info_Icon_03(-324px -36px);
+	}
+	// line 3
+	&_all03{
+		@include Mix_Info_Icon_03(0px -72px);
+	}
+	&_cs_footer03{
+		@include Mix_Info_Icon_03(-36px -72px);
+	}
+	&_phone_footer03{
+		@include Mix_Info_Icon_03(-72px -72px);
+	}
+}
+.heart32{
+	&.l{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("line", $COL_black, "32px"); // size : 32px , 24px, 16px
+		}
+	}
+	&.f{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("fill", $COL_black, "32px"); // size : 32px , 24px, 16px
+		}
+	}
+}
+.heart24{
+	&.l{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("line", color('COL_secondary2'), "24px"); // size : 32px , 24px, 16px
+		}
+	}
+	&.f{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("fill", color('COL_secondary2'), "24px"); // size : 32px , 24px, 16px
+		}
+	}
+}
+.heart16{
+	&.l{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("line", color('COL_secondary2'), "16px"); // size : 32px , 24px, 16px
+		}
+	}
+	&.f{
+		&::before{
+			content : "";
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include Icon_heart("fill", color('COL_gs10'), "16px"); // size : 32px , 24px, 16px
+		}
+	}
+}
+
+.arrow16{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px; 
+		@include Icon_arrow($COL_black);
+	}
+}
+
+.add16{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_add($COL_black,'16px');
+	}
+}
+
+.add24{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_add($COL_black,'24px');
+	}
+}
+
+.add32{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_add($COL_black,'32px');
+	}
+}
+
+
+
+.close12{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_close($COL_black,'12px');
+	}
+}
+
+.close16{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_close(color('COL_secondary2'),'16px');
+	}
+}
+
+.close24{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_close($COL_black,'24px');
+	}
+}
+
+.close32{
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_close(color('COL_secondary2'),'32px');
+	}
+}
+.star16 {
+	&::before{
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_star(color('COL_secondary2'),'16px');
+		background-repeat:no-repeat;
+	}
+}
+.star24 {
+	&::before {
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_star(color('COL_secondary2'),'24px');
+		background-repeat:no-repeat;
+	}
+}
+.star32 { 
+	&::before {
+		content : "";
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		@include Icon_star(color('COL_secondary2'),'32px');
+		background-repeat:no-repeat;
+	}
+}
+
+.hyundai {
+	box-sizing: border-box;
+	width: 200px !important;
+	&::before {
+		content : "";
+		display: inline-block;
+		width: 160px;
+		height:32px;
+		@include Icon_hyundai(color('COL_secondary1'));
+	}
+}
+.genesis {
+	box-sizing: border-box;
+	width: 200px !important;
+	&::before {
+		content : "";
+		display: inline-block;
+		width: 119px;
+		height:24px;
+		@include Icon_genesis($COL_black);
+	}
+}

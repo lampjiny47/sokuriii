@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/00-guide/m/guide_inc/guide_top.shtml"-->
+</head>
+<body>
+<!-- WRAP -->
+<div id="wrap">
+	<!--#include file="/00-guide/m/guide_inc/guide_head.shtml"-->
+	<!-- container -->
+	<div id="container">
+		<!-- left -->
+		<div id="sideMenu">
+			<ul class="navigation">
+				<li><button id="item1">Nameing 규칙</button>
+					<ul class="sub">
+						<li><button id="item1_1">목적 & 기본 규칙</button></li>
+						<li><button id="item1_2">selector & SASS Naming</button></li>
+						<li><button id="item1_3">image Naming</button></li>
+						<li><button id="item1_4">기능 예약어</button></li>
+					</ul>
+				</li>
+				<li><button id="item2">레이아웃</button>
+					<ul class="sub">
+						<li><button id="item2_1">PC 템플릿 구조</button></li>
+						<li><button id="item2_2">MOBILE 템플릿 구조</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- left -->
+		<!-- contents -->
+		<div id="contents">
+			<h3>Nameing 규칙</h3>
+			<div id="uio_item1_1" class="component">
+				<h4>목적</h4>
+				<ol class="no">
+					<li>이름만 보고 무엇을 하는 지 알 수 있어야 한다.</li>
+					<li>이름만 보고 어디에서 사용하는 지 알 수 있어야 한다.</li>
+					<li>Nameing 규칙을 지킴으로 소스의 재사용성을 높인다.</li>
+				</ol>
+
+				<h4>기본 규칙</h4>
+				<ol class="no">
+					<li>영문, 숫자, 언더바(_)로 작성한다.</li>
+					<li>selector, images는 대문자, 숫자로 시작할 수 없다.</li>
+					<li>언더바(_)는 2개 이상의 단어조합에 사용하되, 단어와 숫자의 조합일 경우 생략한다.</li>
+					<li>언더바(_)의 사용은 1개로 제한한다.</li>
+					<li>단어에 숫자조합을 하는 경우 0을 붙여 2자리로 표현한다.(<i>예 : 01</i>)</li>
+
+					<li>selelctor는 컴퍼넌트별 약어로 시작한다.(<i>Component 약어(표-1) 참조</i>)</li>
+					<li>images는 영역별 Sprite 약어 사용한다.(<i>Sprite 영역별 이미지(표-3) 참조</i>)</li>
+					<li>사이트 전체 큰 프레임을 형성하는 Layout은 ID로 정의하며 'CUV'가 들어가도록 네이밍한다.(레이아웃 참조)</li>
+					<li><strong>jQuery로 컨트롤 되는 기능은 별도 selector를 선언하며, jQ_ 를 붙인다.</strong></li>
+					<li>HTML 파일명은 스토리보드 화면ID로 작성하며, 확장자는 SSI(Server Side Include)를 위해 .shtml로 한다.</li>
+					<li><strong>하나의 id는 문서에서 한번만 사용한다.</strong></li>
+					<li>레이아웃 공통어(표-1) 및 기능상의 이유가 없다면 id의 사용은 자제한다.</li>
+					<li>레이아웃 id의 네이밍은 조합하지 않고, 디자인 속성을 추가/변경하려면 class를 사용한다.</li>
+				</ol>
+			</div>
+
+			<div id="uio_item1_2" class="component">
+				<h4>selelctor Naming</h4>
+				<ol class="no">
+					<li>기본 Component의 시작은 아래 '<i>Component 약어(표-1)</i>'에 명시된 약어로 시작한다.</li>
+					<li>Component는 해당 Component가 갖는 디자인 요소만 style 처리한다. (레이아웃은 해당 컴포넌트를 감싸고 있는 요소에 넣기)</li>
+					<li>특정 영역에서만 사용되는 Component는 약어 앞에 특정영역 명을 넣을 수 있다. (예 : search_ipt)</li>
+					<li>reset 스타일을 제외하고 selector 없이 html 태그에 스타일을 넣을 수 없다.</li>
+					<li>inner, box, tit, txt 등 간략한 약어로 구성된 selector는 <strong>부모 selector에 상속 시켜 사용</strong>한다.</li>
+					<li>전체선택자(*)는 box-sizing:border-box를 제외하고 사용하지 않는다.</li>
+					<li>인접 형제선택자(Adjacent Sibling Combinator), 일반 형제 선택자(General Sibling Combinator)는 <strong>사용하지 않는다.</strong> (예 : li + li, .main_box ~ div)</li>
+				</ol>
+				<!-- [표] Component 약어(표-1) / 특정 영역의 Component 약어(표-2) -->
+				<div class="tbl01 mrgT40 f_clear">
+					<div class="lay_lft">
+						<h5>Component 약어(표-1)</h5>
+						<table summary="Component 약어(표-1)">
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:150px;">
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">Component</th>
+								<th scope="col">시작어</th>
+								<th scope="col">예</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Button(Link)</th>
+								<td>btn_</td>
+								<td>btn_</td>
+							</tr>
+							<tr>
+								<th>Calendar</th>
+								<td>cal_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>CheckBox</th>
+								<td>chk_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Radio</th>
+								<td>rdo_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Combo(select)</th>
+								<td>cmb_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Text input</th>
+								<td>ipt_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Unit(차량 썸네일 정보)</th>
+								<td>unit_</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>선택 표시</th>
+								<td>active</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>보이기/감추기(열기/닫기)</th>
+								<td>showing / hiding</td>
+								<td></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<div class="lay_rht">
+						<h5>특정 영역의 Component 약어(표-2)</h5>
+						<table summary="특정 영역의 Component 약어(표-2)">
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:150px;">
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">영역</th>
+								<th scope="col">시작 약어</th>
+								<th scope="col">예</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="3">header</th>
+								<td rowspan="3">h_</td>
+								<td>로고 : h_logo</td>
+							</tr>
+							<tr>
+								<td>메뉴 : h_menu</td>
+							</tr>
+							<tr>
+								<td>검색 : h_search</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">footer</th>
+								<td rowspan="3">f_</td>
+								<td>로고 : f_logo</td>
+							</tr>
+							<tr>
+								<td>메뉴 : f_menu</td>
+							</tr>
+							<tr>
+								<td>주소 : h_address</td>
+							</tr>
+							<tr>
+								<th>텝 영역</th>
+								<td>tabs_</td>
+								<td>tabs_stl01</td>
+							</tr>
+							<tr>
+								<th>카테고리 Sorting</th>
+								<td>sorting_</td>
+								<td>sorting_stl01</td>
+							</tr>
+							<tr>
+								<th>안내문구</th>
+								<td>notice_</td>
+								<td></td>
+							</tr>
+						</tbody>
+						</table>
+
+					</div>
+				</div>
+				<!-- //[표] Component 약어(표-1) / 특정 영역의 Component 약어(표-2)-->
+				<h4>SASS Naming(function & mixin)</h4>
+				<ol class="no">
+					<li>SASS문에서 FUNCTION와 MIXIN 의 기본 시작은 대분자로 표현한다.</li>
+					<li>약어를 사용하지 않는다.</li>
+					<li>약어를 사용하지 않는다.</li>
+				</ol>
+
+			</div>
+
+			<div id="uio_item1_3" class="component">
+				<h4>image Naming</h4>
+				<ol class="no">
+					<li>영문, 숫자, 언더바(_)로 작성한다.</li>
+					<li>이미지 공통어(표N-2)에 근거한다.</li>
+					<li>같은 분류의 이미지가 두 개 이상일 경우 숫자를 추가해 구분한다.</li>
+					<li>Sprite 처리 이미지는 영역별로 묶어서 관리하며, 이름 앞에 영역별 약어를 사용한다.(<i>Sprite 영역별 이미지(표-3)</i>)</li>
+					<li>속도를 고려하여 sprite 이미지 사이즈(600x600)를 용량을 제한한다.</li>
+					<li>컨텐츠 이미지는 폴더로 1차 구분한 후 컨텐츠에 맞는 영어명을 사용한다.</li>
+				</ol>
+				<!-- [표] Sprite 영역별 이미지(표-3) / 특정 영역의 시작 약어(표-4) -->
+				<div class="tbl01 mrgT40 f_clear">
+					<div class="lay_lft">
+						<h5>Sprite 영역별 이미지(표-3)</h5>
+						<table summary="Sprite 영역별 이미지(표-3)">
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:150px;">
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">Component</th>
+								<th scope="col">파일명</th>
+								<th scope="col">예</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>header</th>
+								<td>sprite_header.png</td>
+								<td>sprite_header</td>
+							</tr>
+							<tr>
+								<th>footer</th>
+								<td>sprite_footer.png</td>
+								<td>sprite_footer</td>
+							</tr>
+							<tr>
+								<th>차량 정보 아이콘</th>
+								<td>icon_car.png</td>
+								<td>icon_car</td>
+							</tr>
+							<tr>
+								<th>form 관련 이미지</th>
+								<td>sprite_form.png</td>
+								<td>체크박스, 레디오버튼, 콤보박스, 버튼</td>
+							</tr>
+							<tr>
+								<th>컨텐츠 블릿</th>
+								<td>icon_bull.png</td>
+								<td></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<div class="lay_rht">
+						<h5>컨텐츠 (표-4)</h5>
+						<table summary="특정 영역의 시작 약어(표-4)">
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:150px;">
+							<col style="width:*" />
+						</colgroup>
+						<thead>
+							<tr class="center">
+								<th scope="col">컨텐츠</th>
+								<th scope="col">폴더(1차)</th>
+								<th scope="col">예</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">고객센터</th>
+								<td>/images/customer/</td>
+								<td>sales_guide_</td>
+							</tr>
+							<tr>
+								<th scope="row">중고차 연구소</th>
+								<td>/images//</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">온라인 전시장</th>
+								<td>/images//</td>
+								<td></td>
+							</tr>
+						</tbody>
+						</table>
+
+					</div>
+				</div>
+				<!-- //[표] Sprite 영역별 이미지(표-3) / 특정 영역의 시작 약어(표-4) -->
+			</div>
+
+			<div id="uio_item1_4" class="component">
+				<h4>기능 예약어</h4>
+				<ol class="no">
+					<li>영문, 숫자, 언더바(_)로 작성한다.</li>
+					<li>Sprite 처리 이미지는 영역별로 묶어서 관리하며, 이름 앞에 영역별 약어를 사용한다.(<i>Sprite 영역별 이미지(표-3)</i>)</li>
+				</ol>
+				<!-- [표] 기능 예약어(표-5) -->
+				<div class="tbl01 mrgT40">
+					<h5>기능 예약어(표-5)</h5>
+					<table summary="기능 예약어(표-5)">
+					<colgroup>
+						<col style="width:200px;">
+						<col style="width:150px;">
+						<col style="width:*" />
+					</colgroup>
+					<thead>
+						<tr class="center">
+							<th scope="col">기능</th>
+							<th scope="col">selector 명</th>
+							<th scope="col">기능 설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Tab</th>
+							<td>jQ_tabs</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>보이기/감추기(열기/닫기)</th>
+							<td>showing / hiding</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>Accodion</th>
+							<td>jQ_accodion</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>Swiper</th>
+							<td>jQ_swiper</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>Modal layer</th>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				<!-- //[표] 기능 예약어(표-5)-->
+			</div>
+			
+
+
+			<h3>레이아웃</h3>
+			<div id="uio_item2_1" class="component">
+				<h4>PC 템플릿 구조 네이밍</h4>
+				<!-- [layout] PC 템플릿 구조 네이밍 -->
+				<div class="layoutForm">
+					<div class="nm_layout"><strong>#CPOloading</strong>(로딩바)</div>
+					<div class="nm_layout"><strong>#CPOskip</strong>(공통영역건너뛰기)</div>
+					<div class="nm_layout">
+						<div class="lay_wrap"><strong>#CPOwrap</strong>(전체영역)
+							<div class="lay_dep1">
+								<strong>#CPOheader</strong>(헤더)
+								<div class="clearfix">
+									<div class="clearfix2">
+										<div class="lay_dep2 d1"><strong>.h_logo</strong>(h1/로고)</div>
+										<div class="lay_dep2 d5"><strong>.h_search</strong>(검색)</div>
+										<div class="lay_dep2 d6"><strong>.h_hutil</strong>(기타)</div>
+									</div>
+									<div class="lay_dep2 d4"><strong>.h_menu</strong>(상단메뉴)</div>
+								</div>
+							</div>
+							<div class="lay_dep1">
+								<strong>#CPOcontainer</strong>(중간영역)
+								<div class="clearfix">
+									<div class="lay_dep2 cn_left">
+										<strong>#CPOsnb</strong>(사이드메뉴)
+										<div class="lay_dep3"><strong>.lt</strong>(h2/Side 메뉴타이틀)</div>
+										<div class="lay_dep3" style="height:90px;"><strong>.box_snb</strong>(왼쪽메뉴)</div>
+										<div class="lay_dep3"><strong>.ad_snb</strong>(메뉴이외의링크)</div>
+									</div>
+									<div class="lay_dep2 cn_right"><strong>#CPOcontents</strong>(본문표시)
+										<div class="lay_dep3"><strong>.tit_con</strong>(h3/컨텐츠타이틀)</div>
+										<div class="lay_dep3"><strong>.location</strong>(div/문서경로)</div>
+										<div class="lay_dep3" style="height:90px;"><strong>.box_contents</strong>(컨텐츠영역)</div>
+									</div>
+								</div>
+							</div>
+							<div class="lay_dep1">
+								<strong>#CPOfooter</strong>(풋터)
+							</div>
+						</div>
+					</div>
+					<div class="nm_layout">
+						<strong>#modal</strong>(레이어팝업영역)
+					</div>
+				</div>
+				<!-- //[layout] PC 템플릿 구조 네이밍 -->
+			</div>
+			<div id="uio_item2_2" class="component">
+				<h4>Mobile 템플릿 구조 네이밍</h4>
+				<!-- [layout] MO 템플릿 구조 네이밍 -->
+				<div class="layoutForm" style="width:460px">
+					<div class="nm_layout"><strong>#CPOloading</strong>(로딩바)</div>
+					<div class="nm_layout"><strong>#CPOskip</strong>(공통영역건너뛰기)</div>
+					<div class="nm_layout">
+						<div class="lay_wrap"><strong>#CPOwrap</strong>(전체영역)
+							<div class="lay_dep1">
+								<strong>#CPOheader</strong>(header/헤더)
+								
+							</div>
+							<div class="lay_dep1">
+								<strong>#CPOContentsr</strong>(중간영역)
+								<div class="clearfix">
+									<div class="lay_dep2"><strong>#titCont</strong>(이전버튼, 타이틀 영역)</div>
+									<div class="lay_dep2" style="height:90px;"><strong>#contents</strong>(본문표시)</div>
+									<div class="lay_dep2"><strong>#fixCont</strong>(하단 고정 영역)</div>
+								</div>
+							</div>
+							<div class="lay_dep1">
+								<strong>#CPOActionbar</strong>(액션바)<br />
+								<strong>#CPOHamburger</strong>(카테고리메뉴)<br />
+								<strong>#CPOSearch</strong>(검색 레이어)<br />
+								<strong>#CPOFooter</strong>(풋터)<br />
+							</div>
+						</div>
+					</div>
+					<div class="nm_layout">
+						<strong>#modal</strong>(레이어팝업영역)
+					</div>
+				</div>
+				<!-- //layout html -->
+			</div>
+
+
+		</div>
+		<!-- contents -->
+	</div>
+	<!-- //container -->
+	<!--#include file="/00-guide/m/guide_inc/guide_footer.shtml"-->
+</div>
+<!-- //WRAP -->
+
+</body>
+</html>
