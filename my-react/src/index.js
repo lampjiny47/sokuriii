@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Library from './chapter03/Library';
 import Clock from './chapter04/Clock';
+import Form from './components/ui-guide/Form'
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval( () => {
@@ -13,6 +14,7 @@ setInterval( () => {
       {/* <App /> */}
       <Library />
       <Clock />
+      <Form />
     </React.StrictMode>,
     document.getElementById('root')
   );
